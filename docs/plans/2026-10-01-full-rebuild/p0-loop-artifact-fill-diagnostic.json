@@ -1,0 +1,315 @@
+{
+  "checks": [
+    {
+      "name": "db-filesystem",
+      "passed": true,
+      "evidence": {
+        "capacity_bytes": 241081344,
+        "fstype": "ext4",
+        "source": "/dev/loop0",
+        "device_number": "7:0",
+        "configured_bytes": 268435456,
+        "uuid": "c3179d4f-ce4b-4678-a460-5658829294a1"
+      }
+    },
+    {
+      "name": "artifact-filesystem",
+      "passed": true,
+      "evidence": {
+        "capacity_bytes": 241081344,
+        "fstype": "ext4",
+        "source": "/dev/loop1",
+        "device_number": "7:1",
+        "configured_bytes": 268435456,
+        "uuid": "790840dc-cf61-4b32-b366-85b40a3410b4"
+      }
+    }
+  ],
+  "error": "TimeoutExpired: Command '['docker', 'wait', 'forge-loop-bd28045fde2c-artifact-fill']' timed out after 120 seconds",
+  "cleanup": {
+    "containers": true,
+    "volumes": true,
+    "loop_devices": true,
+    "backing_volume": true,
+    "errors": []
+  },
+  "prefix": "forge-loop-bd28045fde2c",
+  "backing_volume": "forge-loop-bd28045fde2c-images",
+  "controller": "forge-loop-bd28045fde2c-controller",
+  "remaining_loops": {},
+  "pending_attach": [],
+  "uncertain_mutations": [],
+  "timings": [
+    {
+      "operation": "image",
+      "seconds": 0.471,
+      "exit_code": 0
+    },
+    {
+      "operation": "volume",
+      "seconds": 0.678,
+      "exit_code": 0
+    },
+    {
+      "operation": "run",
+      "seconds": 10.823,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 3.125,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 13.496,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 0.887,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 1.709,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 1.552,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 1.9,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 1.129,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 0.893,
+      "exit_code": 0
+    },
+    {
+      "operation": "volume",
+      "seconds": 0.185,
+      "exit_code": 0
+    },
+    {
+      "operation": "volume",
+      "seconds": 0.394,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 0.934,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 0.563,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 1.215,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 0.523,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 0.361,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 1.113,
+      "exit_code": 0
+    },
+    {
+      "operation": "volume",
+      "seconds": 0.767,
+      "exit_code": 0
+    },
+    {
+      "operation": "volume",
+      "seconds": 0.328,
+      "exit_code": 0
+    },
+    {
+      "operation": "run",
+      "seconds": 6.444,
+      "exit_code": 0
+    },
+    {
+      "operation": "wait",
+      "seconds": 5.379,
+      "exit_code": 0
+    },
+    {
+      "operation": "logs",
+      "seconds": 1.185,
+      "exit_code": 0
+    },
+    {
+      "operation": "rm",
+      "seconds": 0.388,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 3.073,
+      "exit_code": 0
+    },
+    {
+      "operation": "run",
+      "seconds": 8.967,
+      "exit_code": 0
+    },
+    {
+      "operation": "wait",
+      "seconds": 7.915,
+      "exit_code": 0
+    },
+    {
+      "operation": "logs",
+      "seconds": 0.411,
+      "exit_code": 0
+    },
+    {
+      "operation": "rm",
+      "seconds": 0.848,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 5.772,
+      "exit_code": 0
+    },
+    {
+      "operation": "run",
+      "seconds": 7.618,
+      "exit_code": 0
+    },
+    {
+      "operation": "wait",
+      "seconds": 120.385,
+      "exit_code": null,
+      "deadline_seconds": 120
+    },
+    {
+      "operation": "inspect",
+      "seconds": 3.945,
+      "exit_code": 0
+    },
+    {
+      "operation": "logs",
+      "seconds": 1.993,
+      "exit_code": 0
+    },
+    {
+      "operation": "rm",
+      "seconds": 1.706,
+      "exit_code": 0
+    },
+    {
+      "operation": "rm",
+      "seconds": 3.681,
+      "exit_code": 0
+    },
+    {
+      "operation": "rm",
+      "seconds": 51.628,
+      "exit_code": 0
+    },
+    {
+      "operation": "volume",
+      "seconds": 0.92,
+      "exit_code": 0
+    },
+    {
+      "operation": "volume",
+      "seconds": 1.434,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 14.043,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 18.027,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 12.319,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 11.92,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 8.645,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 3.481,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 7.558,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 5.845,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 9.295,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 8.334,
+      "exit_code": 0
+    },
+    {
+      "operation": "rm",
+      "seconds": 25.467,
+      "exit_code": 0
+    },
+    {
+      "operation": "volume",
+      "seconds": 1.164,
+      "exit_code": 0
+    }
+  ],
+  "diagnostics": [
+    {
+      "container": "forge-loop-bd28045fde2c-artifact-fill",
+      "state": "{\"Status\":\"running\",\"Running\":true,\"Paused\":false,\"Restarting\":false,\"OOMKilled\":false,\"Dead\":false,\"Pid\":50716,\"ExitCode\":0,\"Error\":\"\",\"StartedAt\":\"2026-10-01T15:00:34.793347711Z\",\"FinishedAt\":\"0001-01-01T00:00:00Z\"}\n",
+      "log": "{\"written\": 16777216, \"elapsed_seconds\": 4.167849209999986, \"memory_events\": \"low 0\\nhigh 0\\nmax 0\\noom 0\\noom_kill 0\\noom_group_kill 0\\n\"}\n{\"written\": 33554432, \"elapsed_seconds\": 8.170515503999923, \"memory_events\": \"low 0\\nhigh 0\\nmax 0\\noom 0\\noom_kill 0\\noom_group_kill 0\\n\"}\n{\"written\": 50331648, \"elapsed_seconds\": 10.02949087900015, \"memory_events\": \"low 0\\nhigh 0\\nmax 0\\noom 0\\noom_kill 0\\noom_group_kill 0\\n\"}\n{\"written\": 67108864, \"elapsed_seconds\": 35.36268526599997, \"memory_events\": \"low 0\\nhigh 0\\nmax 57\\noom 0\\noom_kill 0\\noom_group_kill 0\\n\"}\n{\"written\": 83886080, \"elapsed_seconds\": 81.3843774959987, \"memory_events\": \"low 0\\nhigh 0\\nmax 164\\noom 0\\noom_kill 0\\noom_group_kill 0\\n\"}\n"
+    }
+  ],
+  "scope": "isolated artifact fill diagnostic only; not lifecycle acceptance",
+  "tools_image_id": "sha256:35175b730c0fb88c24d2dcbd5869cee7d8cb8913638f2ec1fdb338e10dd117dd",
+  "tools_versions": "e2fsprogs: Standard Ext2/3/4 filesystem utilities\ne2fsprogs: https://e2fsprogs.sourceforge.net/\ne2fsprogs: 471 KiB\nutil-linux: Random collection of Linux utilities\nutil-linux: https://git.kernel.org/cgit/utils/util-linux/util-linux.git\nutil-linux: 1 B"
+}

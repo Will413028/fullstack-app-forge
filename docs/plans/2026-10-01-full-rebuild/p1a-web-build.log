@@ -1,0 +1,22 @@
+$ next build
+▲ Next.js 16.3.8 (Turbopack)
+✓ Running next.config.ts took 1952ms
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 38.5s
+  Running TypeScript ...
+  Finished TypeScript in 67s ...
+  Collecting page data using 5 workers ...
+  Generating static pages using 5 workers (0/3) ...
+✓ Generating static pages using 5 workers (3/3) in 12.9s
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+└ ƒ /apps/[id]
+
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+

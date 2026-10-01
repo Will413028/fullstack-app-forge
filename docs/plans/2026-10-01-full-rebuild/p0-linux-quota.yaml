@@ -1,0 +1,37 @@
+# Preview only: create disks in a dedicated, authorized LIMA_HOME before start.
+minimumLimaVersion: 2.2.0
+vmType: vz
+arch: aarch64
+cpus: 2
+memory: 4GiB
+disk: 12GiB
+images:
+  - location: https://cloud-images.ubuntu.com/releases/resolute/release-20260720/ubuntu-26.04-server-cloudimg-arm64.img
+    arch: aarch64
+    digest: sha256:7bcf159e29ad0000bfed9c57875908c39268f5ed1257f4958fa6a9f5f60edd54
+mounts: []
+ssh:
+  loadDotSSHPubKeys: false
+containerd:
+  system: false
+  user: false
+propagateProxyEnv: false
+additionalDisks:
+  - name: fqdb01
+    format: true
+    fsType: ext4
+  - name: fqart01
+    format: true
+    fsType: ext4
+portForwards:
+  - guestPortRange: [1, 65535]
+    ignore: true
+provision:
+  - mode: system
+    script: |
+      #!/bin/sh
+      set -eu
+      export DEBIAN_FRONTEND=noninteractive
+      apt-get update
+      apt-get install -y --no-install-recommends docker.io e2fsprogs util-linux python3
+      systemctl enable --now docker

@@ -1,0 +1,46 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile.web-deps
+#1 transferring dockerfile:
+#1 transferring dockerfile: 395B 0.0s done
+#1 DONE 0.3s
+
+#2 [internal] load metadata for docker.io/library/node@sha256:0e0ff40c39bc087845bfb27465a0df4ea419520094bc35842ff83dd8cbe6f9b6
+#2 DONE 0.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 94B done
+#3 DONE 0.0s
+
+#4 [1/4] FROM docker.io/library/node@sha256:0e0ff40c39bc087845bfb27465a0df4ea419520094bc35842ff83dd8cbe6f9b6
+#4 CACHED
+
+#5 [internal] load build context
+#5 transferring context: 34.56kB 0.0s done
+#5 DONE 0.1s
+
+#6 [2/4] WORKDIR /opt/template-deps
+#6 DONE 0.1s
+
+#7 [3/4] COPY package.json package-lock.json ./
+#7 DONE 0.1s
+
+#8 [4/4] RUN npm ci --include=dev --ignore-scripts --no-audit --no-fund --registry=https://registry.npmjs.org     && npm cache clean --force
+#8 97.99 
+#8 97.99 added 28 packages in 2m
+#8 98.11 npm notice
+#8 98.11 npm notice New major version of npm available! 11.19.0 -> 12.2.0
+#8 98.11 npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+#8 98.11 npm notice To update run: npm install -g npm@12.2.0
+#8 98.11 npm notice
+#8 99.29 npm warn using --force Recommended protections disabled.
+#8 DONE 101.6s
+
+#9 exporting to image
+#9 exporting layers
+#9 exporting layers 6.5s done
+#9 writing image sha256:64f6717b76771ccfe7d9b47947e40cdc7f924e7bd919b88037200cd58c62541d done
+#9 naming to docker.io/library/forge-web-deps:p1 done
+#9 DONE 6.5s
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/scl8ner6q9zou33cdh9jmx7pg

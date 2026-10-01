@@ -1,0 +1,421 @@
+{
+  "checks": [
+    {
+      "name": "db-filesystem",
+      "passed": true,
+      "evidence": {
+        "capacity_bytes": 241081344,
+        "fstype": "ext4",
+        "source": "/dev/loop0",
+        "device_number": "7:0",
+        "configured_bytes": 268435456,
+        "uuid": "637ad856-314c-4e60-af60-ca3d37f2009c"
+      }
+    },
+    {
+      "name": "artifact-filesystem",
+      "passed": true,
+      "evidence": {
+        "capacity_bytes": 241081344,
+        "fstype": "ext4",
+        "source": "/dev/loop1",
+        "device_number": "7:1",
+        "configured_bytes": 268435456,
+        "uuid": "6ffde4a5-453d-490d-b1ac-3783434beac3"
+      }
+    },
+    {
+      "name": "artifact-enospc",
+      "passed": true,
+      "evidence": {
+        "errno": 28,
+        "written": 236609536,
+        "elapsed_seconds": 37.62272364300043
+      }
+    }
+  ],
+  "error": null,
+  "cleanup": {
+    "containers": true,
+    "volumes": true,
+    "loop_devices": true,
+    "backing_volume": true,
+    "errors": []
+  },
+  "prefix": "forge-loop-f2cc257889a6",
+  "backing_volume": "forge-loop-f2cc257889a6-images",
+  "controller": "forge-loop-f2cc257889a6-controller",
+  "remaining_loops": {},
+  "pending_attach": [],
+  "uncertain_mutations": [],
+  "timings": [
+    {
+      "operation": "image",
+      "seconds": 2.305,
+      "exit_code": 0
+    },
+    {
+      "operation": "volume",
+      "seconds": 1.58,
+      "exit_code": 0
+    },
+    {
+      "operation": "run",
+      "seconds": 30.572,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 13.598,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 28.9,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 5.744,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 9.364,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 8.114,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 17.867,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 6.538,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 10.335,
+      "exit_code": 0
+    },
+    {
+      "operation": "volume",
+      "seconds": 1.207,
+      "exit_code": 0
+    },
+    {
+      "operation": "volume",
+      "seconds": 1.197,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 14.1,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 8.762,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 0.957,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 1.889,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 1.733,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 2.006,
+      "exit_code": 0
+    },
+    {
+      "operation": "volume",
+      "seconds": 0.368,
+      "exit_code": 0
+    },
+    {
+      "operation": "volume",
+      "seconds": 0.915,
+      "exit_code": 0
+    },
+    {
+      "operation": "run",
+      "seconds": 16.228,
+      "exit_code": 0
+    },
+    {
+      "operation": "inspect",
+      "seconds": 0.595,
+      "exit_code": 0
+    },
+    {
+      "operation": "wait",
+      "seconds": 15.959,
+      "exit_code": 0
+    },
+    {
+      "operation": "logs",
+      "seconds": 1.709,
+      "exit_code": 0
+    },
+    {
+      "operation": "rm",
+      "seconds": 1.951,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 7.527,
+      "exit_code": 0
+    },
+    {
+      "operation": "run",
+      "seconds": 22.342,
+      "exit_code": 0
+    },
+    {
+      "operation": "inspect",
+      "seconds": 2.542,
+      "exit_code": 0
+    },
+    {
+      "operation": "wait",
+      "seconds": 9.844,
+      "exit_code": 0
+    },
+    {
+      "operation": "logs",
+      "seconds": 0.644,
+      "exit_code": 0
+    },
+    {
+      "operation": "rm",
+      "seconds": 1.539,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 2.314,
+      "exit_code": 0
+    },
+    {
+      "operation": "run",
+      "seconds": 12.265,
+      "exit_code": 0
+    },
+    {
+      "operation": "inspect",
+      "seconds": 2.407,
+      "exit_code": 0
+    },
+    {
+      "operation": "wait",
+      "seconds": 54.138,
+      "exit_code": 0
+    },
+    {
+      "operation": "logs",
+      "seconds": 1.052,
+      "exit_code": 0
+    },
+    {
+      "operation": "rm",
+      "seconds": 0.834,
+      "exit_code": 0
+    },
+    {
+      "operation": "rm",
+      "seconds": 0.757,
+      "exit_code": 0
+    },
+    {
+      "operation": "rm",
+      "seconds": 0.237,
+      "exit_code": 0
+    },
+    {
+      "operation": "rm",
+      "seconds": 0.319,
+      "exit_code": 0
+    },
+    {
+      "operation": "volume",
+      "seconds": 0.539,
+      "exit_code": 0
+    },
+    {
+      "operation": "volume",
+      "seconds": 1.479,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 2.493,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 2.019,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 1.518,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 1.502,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 3.071,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 1.468,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 0.608,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 2.229,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 1.162,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 2.3,
+      "exit_code": 0
+    },
+    {
+      "operation": "rm",
+      "seconds": 3.351,
+      "exit_code": 0
+    },
+    {
+      "operation": "volume",
+      "seconds": 2.233,
+      "exit_code": 0
+    }
+  ],
+  "diagnostics": [
+    {
+      "container": "forge-loop-f2cc257889a6-artifact-fill",
+      "progress": "{\"written\": 16777216, \"elapsed_seconds\": 2.4339879600011045, \"memory_events\": \"low 0\\nhigh 0\\nmax 0\\noom 0\\noom_kill 0\\noom_group_kill 0\\n\"}\n{\"written\": 33554432, \"elapsed_seconds\": 4.907992336000461, \"memory_events\": \"low 0\\nhigh 0\\nmax 0\\noom 0\\noom_kill 0\\noom_group_kill 0\\n\"}\n{\"written\": 50331648, \"elapsed_seconds\": 7.089775962000203, \"memory_events\": \"low 0\\nhigh 0\\nmax 0\\noom 0\\noom_kill 0\\noom_group_kill 0\\n\"}\n{\"written\": 67108864, \"elapsed_seconds\": 12.50739854800122, \"memory_events\": \"low 0\\nhigh 0\\nmax 0\\noom 0\\noom_kill 0\\noom_group_kill 0\\n\"}\n{\"written\": 83886080, \"elapsed_seconds\": 16.236491841000316, \"memory_events\": \"low 0\\nhigh 0\\nmax 0\\noom 0\\noom_kill 0\\noom_group_kill 0\\n\"}\n{\"written\": 100663296, \"elapsed_seconds\": 18.10559555100008, \"memory_events\": \"low 0\\nhigh 0\\nmax 0\\noom 0\\noom_kill 0\\noom_group_kill 0\\n\"}\n{\"written\": 117440512, \"elapsed_seconds\": 21.874593511000057, \"memory_events\": \"low 0\\nhigh 0\\nmax 0\\noom 0\\noom_kill 0\\noom_group_kill 0\\n\"}\n{\"written\": 134217728, \"elapsed_seconds\": 25.02266330400016, \"memory_events\": \"low 0\\nhigh 0\\nmax 0\\noom 0\\noom_kill 0\\noom_group_kill 0\\n\"}\n{\"written\": 150994944, \"elapsed_seconds\": 29.095642681000754, \"memory_events\": \"low 0\\nhigh 0\\nmax 0\\noom 0\\noom_kill 0\\noom_group_kill 0\\n\"}\n{\"written\": 167772160, \"elapsed_seconds\": 30.511748223001632, \"memory_events\": \"low 0\\nhigh 0\\nmax 0\\noom 0\\noom_kill 0\\noom_group_kill 0\\n\"}\n{\"written\": 184549376, \"elapsed_seconds\": 32.579018766000445, \"memory_events\": \"low 0\\nhigh 0\\nmax 0\\noom 0\\noom_kill 0\\noom_group_kill 0\\n\"}\n{\"written\": 201326592, \"elapsed_seconds\": 33.72134955800175, \"memory_events\": \"low 0\\nhigh 0\\nmax 0\\noom 0\\noom_kill 0\\noom_group_kill 0\\n\"}\n{\"written\": 218103808, \"elapsed_seconds\": 35.99122164200162, \"memory_events\": \"low 0\\nhigh 0\\nmax 0\\noom 0\\noom_kill 0\\noom_group_kill 0\\n\"}\n{\"written\": 234881024, \"elapsed_seconds\": 37.40581147600096, \"memory_events\": \"low 0\\nhigh 0\\nmax 0\\noom 0\\noom_kill 0\\noom_group_kill 0\\n\"}\n"
+    }
+  ],
+  "writer_limits": [
+    {
+      "container": "forge-loop-f2cc257889a6-db-fs",
+      "actual": {
+        "memory": 536870912,
+        "memory_swap": 536870912,
+        "nano_cpus": 500000000,
+        "pids": 32,
+        "readonly": true,
+        "privileged": false,
+        "network": "none",
+        "cap_drop": [
+          "ALL"
+        ]
+      },
+      "expected": {
+        "memory": 536870912,
+        "memory_swap": 536870912,
+        "nano_cpus": 500000000,
+        "pids": 32,
+        "readonly": true,
+        "privileged": false,
+        "network": "none",
+        "cap_drop": [
+          "ALL"
+        ]
+      }
+    },
+    {
+      "container": "forge-loop-f2cc257889a6-artifact-fs",
+      "actual": {
+        "memory": 536870912,
+        "memory_swap": 536870912,
+        "nano_cpus": 500000000,
+        "pids": 32,
+        "readonly": true,
+        "privileged": false,
+        "network": "none",
+        "cap_drop": [
+          "ALL"
+        ]
+      },
+      "expected": {
+        "memory": 536870912,
+        "memory_swap": 536870912,
+        "nano_cpus": 500000000,
+        "pids": 32,
+        "readonly": true,
+        "privileged": false,
+        "network": "none",
+        "cap_drop": [
+          "ALL"
+        ]
+      }
+    },
+    {
+      "container": "forge-loop-f2cc257889a6-artifact-fill",
+      "actual": {
+        "memory": 536870912,
+        "memory_swap": 536870912,
+        "nano_cpus": 500000000,
+        "pids": 32,
+        "readonly": true,
+        "privileged": false,
+        "network": "none",
+        "cap_drop": [
+          "ALL"
+        ]
+      },
+      "expected": {
+        "memory": 536870912,
+        "memory_swap": 536870912,
+        "nano_cpus": 500000000,
+        "pids": 32,
+        "readonly": true,
+        "privileged": false,
+        "network": "none",
+        "cap_drop": [
+          "ALL"
+        ]
+      }
+    }
+  ],
+  "writer_memory_mib": 512,
+  "scope": "isolated artifact fill diagnostic only; not lifecycle acceptance",
+  "tools_image_id": "sha256:35175b730c0fb88c24d2dcbd5869cee7d8cb8913638f2ec1fdb338e10dd117dd",
+  "tools_versions": "e2fsprogs: Standard Ext2/3/4 filesystem utilities\ne2fsprogs: https://e2fsprogs.sourceforge.net/\ne2fsprogs: 471 KiB\nutil-linux: Random collection of Linux utilities\nutil-linux: https://git.kernel.org/cgit/utils/util-linux/util-linux.git\nutil-linux: 1 B"
+}

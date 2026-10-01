@@ -1,0 +1,120 @@
+{
+  "postgres_image": "sha256:25a89970a83255ae96484d709005bb35aa71f7455f941bc1634514f31c5d5c62",
+  "python_image": "sha256:75496575cd8e3aeb3fe561f0384f661d490c14770eda935d2302d61ca20a0b2d",
+  "checks": [
+    {
+      "name": "idempotent-insert",
+      "passed": true,
+      "evidence": "two inserts with one key yield one durable run"
+    },
+    {
+      "name": "payload-conflict-detectable",
+      "passed": true,
+      "evidence": "API must reject key reuse with a changed digest; DB stores original digest"
+    },
+    {
+      "name": "concurrent-distinct-claims",
+      "passed": true,
+      "evidence": {
+        "claimed_ids": [
+          "1",
+          "3"
+        ]
+      }
+    },
+    {
+      "name": "busy-run-not-reclaimed",
+      "passed": true,
+      "evidence": "valid leases are skipped"
+    },
+    {
+      "name": "expired-lease-recovered",
+      "passed": true,
+      "evidence": "same run, new fence epoch"
+    },
+    {
+      "name": "stale-worker-fenced",
+      "passed": true,
+      "evidence": "epoch 1 cannot publish after epoch 2"
+    },
+    {
+      "name": "cancel-blocks-late-success",
+      "passed": true,
+      "evidence": "cancelled is terminal"
+    },
+    {
+      "name": "event-replay-cursor",
+      "passed": true,
+      "evidence": "cursor returns only unseen event"
+    },
+    {
+      "name": "event-unique-sequence",
+      "passed": true,
+      "evidence": "duplicate sequence does not duplicate durable events"
+    },
+    {
+      "name": "crash-rolls-back-result-and-event",
+      "passed": true,
+      "evidence": "terminated backend leaves neither success status nor success event"
+    },
+    {
+      "name": "database-restart-preserves-runs",
+      "passed": true,
+      "evidence": "isolated anonymous volume survives container restart"
+    },
+    {
+      "name": "cgroup-limits",
+      "passed": true,
+      "evidence": "25000 100000\n67108864"
+    },
+    {
+      "name": "scratch-disk-hard-limit",
+      "passed": true,
+      "evidence": "16MiB tmpfs rejects 20MiB write with ENOSPC"
+    },
+    {
+      "name": "memory-limit-kills-workload",
+      "passed": true,
+      "evidence": {
+        "exit_code": 137,
+        "oom_killed": true
+      }
+    },
+    {
+      "name": "rootfs-write-denied",
+      "passed": true,
+      "evidence": "unprivileged read-only rootfs"
+    },
+    {
+      "name": "controller-timeout-stops-workload",
+      "passed": true,
+      "evidence": "controller kills only its own container after deadline"
+    }
+  ],
+  "cleanup": [
+    {
+      "name": "forge-p0-21a24672fc-03eb25",
+      "removed": true
+    },
+    {
+      "name": "forge-p0-21a24672fc-652293",
+      "removed": true
+    },
+    {
+      "name": "forge-p0-21a24672fc-a65440",
+      "removed": true
+    },
+    {
+      "name": "forge-p0-21a24672fc-a8b72f",
+      "removed": true
+    },
+    {
+      "name": "forge-p0-21a24672fc-pg",
+      "removed": true
+    },
+    {
+      "name": "forge-p0-21a24672fc-timeout",
+      "removed": true
+    }
+  ]
+}

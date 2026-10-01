@@ -1,0 +1,7 @@
+FROM node@sha256:0e0ff40c39bc087845bfb27465a0df4ea419520094bc35842ff83dd8cbe6f9b6
+ENV NEXT_TELEMETRY_DISABLED=1 NODE_ENV=production
+WORKDIR /opt/template-deps
+COPY package.json package-lock.json ./
+RUN npm ci --include=dev --ignore-scripts --no-audit --no-fund --registry=https://registry.npmjs.org \
+    && npm cache clean --force
+USER 1000:1000

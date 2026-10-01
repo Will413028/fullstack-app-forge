@@ -1,0 +1,6 @@
+$ node start.mjs --port 52278
+▲ Next.js 16.3.8
+- Local:         http://127.0.0.1:52278
+- Network:       http://127.0.0.1:52278
+✓ Ready in 0ms
+✓ Running next.config took 168ms

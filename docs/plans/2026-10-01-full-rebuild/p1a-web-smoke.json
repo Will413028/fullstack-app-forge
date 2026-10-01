@@ -1,0 +1,23 @@
+{
+  "scope": "real browser login/register shell; API integration is covered separately, not mocked here",
+  "checks": [
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 960
+      },
+      "registration_switch": true,
+      "horizontal_overflow": false,
+      "page_errors": []
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "registration_switch": true,
+      "horizontal_overflow": false,
+      "page_errors": []
+    }
+  ]
+}

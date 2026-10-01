@@ -1,0 +1,13 @@
+{
+  "name": "fullstack-app-forge",
+  "private": true,
+  "packageManager": "pnpm@11.2.0",
+  "scripts": {
+    "dev": "pnpm --filter @forge/web dev",
+    "build": "pnpm --filter @forge/web build",
+    "typecheck": "pnpm --filter @forge/web typecheck"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.63.0"
+  }
+}

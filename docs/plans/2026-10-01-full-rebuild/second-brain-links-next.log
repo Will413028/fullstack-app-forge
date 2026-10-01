@@ -1,0 +1,11 @@
+掃描 12151 個 wikilink/embed（/Users/will/second-brain）
+
+  resolved-relative              11011
+  resolved-absolute              65
+  resolved-basename(unique)      998
+  resolved-basename(multi)       11
+  ok                             53
+  external                       11
+  placeholder                    2
+
+✅ 無 BROKEN / BROKEN-anchor / AMBIGUOUS-anchor / MEMORY-ref（external=11 為 daily 記錄的 memory 連結；ambiguous-index=0 建議改精確路徑）

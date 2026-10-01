@@ -1,0 +1,46 @@
+{
+  "image": "sha256:25a89970a83255ae96484d709005bb35aa71f7455f941bc1634514f31c5d5c62",
+  "checks": [
+    {
+      "name": "own-app-crud",
+      "passed": true
+    },
+    {
+      "name": "other-app-connect-denied",
+      "passed": true
+    },
+    {
+      "name": "platform-connect-denied",
+      "passed": true
+    },
+    {
+      "name": "ddl-denied-runtime-role",
+      "passed": true
+    },
+    {
+      "name": "server-file-read-denied",
+      "passed": true
+    },
+    {
+      "name": "role-escalation-denied",
+      "passed": true
+    },
+    {
+      "name": "expired-unreclaimed-lease-cannot-complete",
+      "passed": true
+    },
+    {
+      "name": "stale-base-cannot-complete",
+      "passed": true
+    },
+    {
+      "name": "stale-epoch-cannot-complete",
+      "passed": true
+    },
+    {
+      "name": "fresh-lease-base-epoch-completes",
+      "passed": true
+    }
+  ],
+  "cleanup": true
+}

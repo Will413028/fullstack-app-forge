@@ -1,0 +1,1348 @@
+{
+  "revision": "893918c808ce7828cd4b9372967e064ed119bbaa",
+  "tracked_file_count": 386,
+  "license_paths": [],
+  "excluded_sources": [
+    ".env*",
+    "application*.yml",
+    "config/**",
+    "dotfiles",
+    "connection notes"
+  ],
+  "controllers": [
+    {
+      "variant": "monolith",
+      "method": "GET",
+      "path": "/app/chat/gen/code",
+      "symbol": "chatToGenCode",
+      "source": "src/main/java/com/yupi/yuaicodemother/controller/AppController.java",
+      "line": 59,
+      "requirement": "R04",
+      "disposition": "rewrite-as-fastapi-contract"
+    },
+    {
+      "variant": "monolith",
+      "method": "POST",
+      "path": "/app/deploy",
+      "symbol": "deployApp",
+      "source": "src/main/java/com/yupi/yuaicodemother/controller/AppController.java",
+      "line": 95,
+      "requirement": "R10",
+      "disposition": "rewrite-as-fastapi-contract"
+    },
+    {
+      "variant": "monolith",
+      "method": "GET",
+      "path": "/app/download/{appId}",
+      "symbol": "downloadAppCode",
+      "source": "src/main/java/com/yupi/yuaicodemother/controller/AppController.java",
+      "line": 118,
+      "requirement": "R12",
+      "disposition": "rewrite-as-fastapi-contract"
+    },
+    {
+      "variant": "monolith",
+      "method": "POST",
+      "path": "/app/add",
+      "symbol": "addApp",
+      "source": "src/main/java/com/yupi/yuaicodemother/controller/AppController.java",
+      "line": 153,
+      "requirement": "R02",
+      "disposition": "rewrite-as-fastapi-contract"
+    },
+    {
+      "variant": "monolith",
+      "method": "POST",
+      "path": "/app/update",
+      "symbol": "updateApp",
+      "source": "src/main/java/com/yupi/yuaicodemother/controller/AppController.java",
+      "line": 169,
+      "requirement": "R02",
+      "disposition": "rewrite-as-fastapi-contract"
+    },
+    {
+      "variant": "monolith",
+      "method": "POST",
+      "path": "/app/delete",
+      "symbol": "deleteApp",
+      "source": "src/main/java/com/yupi/yuaicodemother/controller/AppController.java",
+      "line": 200,
+      "requirement": "R02",
+      "disposition": "rewrite-as-fastapi-contract"
+    },
+    {
+      "variant": "monolith",
+      "method": "GET",
+      "path": "/app/get/vo",
+      "symbol": "getAppVOById",
+      "source": "src/main/java/com/yupi/yuaicodemother/controller/AppController.java",
+      "line": 224,
+      "requirement": "R02",
+      "disposition": "rewrite-as-fastapi-contract"
+    },
+    {
+      "variant": "monolith",
+      "method": "POST",
+      "path": "/app/my/list/page/vo",
+      "symbol": "listMyAppVOByPage",
+      "source": "src/main/java/com/yupi/yuaicodemother/controller/AppController.java",
+      "line": 241,
+      "requirement": "R02",
+      "disposition": "rewrite-as-fastapi-contract"
+    },
+    {
+      "variant": "monolith",
+      "method": "POST",
+      "path": "/app/good/list/page/vo",
+      "symbol": "listGoodAppVOByPage",
+      "source": "src/main/java/com/yupi/yuaicodemother/controller/AppController.java",
+      "line": 266,
+      "requirement": "R13",
+      "disposition": "rewrite-as-fastapi-contract"
+    },
+    {
+      "variant": "monolith",
+      "method": "POST",
+      "path": "/app/admin/delete",
+      "symbol": "deleteAppByAdmin",
+      "source": "src/main/java/com/yupi/yuaicodemother/controller/AppController.java",
+      "line": 296,
+      "requirement": "R13",
+      "disposition": "rewrite-as-fastapi-contract"
+    },
+    {
+      "variant": "monolith",
+      "method": "POST",
+      "path": "/app/admin/update",
+      "symbol": "updateAppByAdmin",
+      "source": "src/main/java/com/yupi/yuaicodemother/controller/AppController.java",
+      "line": 316,
+      "requirement": "R13",
+      "disposition": "rewrite-as-fastapi-contract"
+    },
+    {
+      "variant": "monolith",
+      "method": "POST",
+      "path": "/app/admin/list/page/vo",
+      "symbol": "listAppVOByPageByAdmin",
+      "source": "src/main/java/com/yupi/yuaicodemother/controller/AppController.java",
+      "line": 341,
+      "requirement": "R13",
+      "disposition": "rewrite-as-fastapi-contract"
+    },
+    {
+      "variant": "monolith",
+      "method": "GET",
+      "path": "/app/admin/get/vo",
+      "symbol": "getAppVOByIdByAdmin",
+      "source": "src/main/java/com/yupi/yuaicodemother/controller/AppController.java",
+      "line": 362,
+      "requirement": "R13",
+      "disposition": "rewrite-as-fastapi-contract"
+    },
+    {
+      "variant": "monolith",
+      "method": "GET",
+      "path": "/chatHistory/app/{appId}",
+      "symbol": "listAppChatHistory",
+      "source": "src/main/java/com/yupi/yuaicodemother/controller/ChatHistoryController.java",
+      "line": 46,
+      "requirement": "R05",
+      "disposition": "rewrite-as-fastapi-contract"
+    },
+    {
+      "variant": "monolith",
+      "method": "POST",
+      "path": "/chatHistory/admin/list/page/vo",
+      "symbol": "listAllChatHistoryByPageForAdmin",
+      "source": "src/main/java/com/yupi/yuaicodemother/controller/ChatHistoryController.java",
+      "line": 62,
+      "requirement": "R13",
+      "disposition": "rewrite-as-fastapi-contract"
+    },
+    {
+      "variant": "monolith",
+      "method": "GET",
+      "path": "/health/",
+      "symbol": "healthCheck",
+      "source": "src/main/java/com/yupi/yuaicodemother/controller/HealthController.java",
+      "line": 13,
+      "requirement": "R09",
+      "disposition": "rewrite-as-fastapi-contract"
+    },
+    {
+      "variant": "monolith",
+      "method": "GET",
+      "path": "/static/{deployKey}/**",
+      "symbol": "serveStaticResource",
+      "source": "src/main/java/com/yupi/yuaicodemother/controller/StaticResourceController.java",
+      "line": 32,
+      "requirement": "R09",
+      "disposition": "rewrite-as-fastapi-contract"
+    },
+    {
+      "variant": "monolith",
+      "method": "POST",
+      "path": "/user/register",
+      "symbol": "userRegister",
+      "source": "src/main/java/com/yupi/yuaicodemother/controller/UserController.java",
+      "line": 46,
+      "requirement": "R01",
+      "disposition": "rewrite-as-fastapi-contract"
+    },
+    {
+      "variant": "monolith",
+      "method": "POST",
+      "path": "/user/login",
+      "symbol": "userLogin",
+      "source": "src/main/java/com/yupi/yuaicodemother/controller/UserController.java",
+      "line": 63,
+      "requirement": "R01",
+      "disposition": "rewrite-as-fastapi-contract"
+    },
+    {
+      "variant": "monolith",
+      "method": "GET",
+      "path": "/user/get/login",
+      "symbol": "getLoginUser",
+      "source": "src/main/java/com/yupi/yuaicodemother/controller/UserController.java",
+      "line": 72,
+      "requirement": "R01",
+      "disposition": "rewrite-as-fastapi-contract"
+    },
+    {
+      "variant": "monolith",
+      "method": "POST",
+      "path": "/user/logout",
+      "symbol": "userLogout",
+      "source": "src/main/java/com/yupi/yuaicodemother/controller/UserController.java",
+      "line": 84,
+      "requirement": "R01",
+      "disposition": "rewrite-as-fastapi-contract"
+    },
+    {
+      "variant": "monolith",
+      "method": "POST",
+      "path": "/user/add",
+      "symbol": "addUser",
+      "source": "src/main/java/com/yupi/yuaicodemother/controller/UserController.java",
+      "line": 94,
+      "requirement": "R01",
+      "disposition": "rewrite-as-fastapi-contract"
+    },
+    {
+      "variant": "monolith",
+      "method": "GET",
+      "path": "/user/get",
+      "symbol": "getUserById",
+      "source": "src/main/java/com/yupi/yuaicodemother/controller/UserController.java",
+      "line": 112,
+      "requirement": "R01",
+      "disposition": "rewrite-as-fastapi-contract"
+    },
+    {
+      "variant": "monolith",
+      "method": "GET",
+      "path": "/user/get/vo",
+      "symbol": "getUserVOById",
+      "source": "src/main/java/com/yupi/yuaicodemother/controller/UserController.java",
+      "line": 124,
+      "requirement": "R01",
+      "disposition": "rewrite-as-fastapi-contract"
+    },
+    {
+      "variant": "monolith",
+      "method": "POST",
+      "path": "/user/delete",
+      "symbol": "deleteUser",
+      "source": "src/main/java/com/yupi/yuaicodemother/controller/UserController.java",
+      "line": 134,
+      "requirement": "R01",
+      "disposition": "rewrite-as-fastapi-contract"
+    },
+    {
+      "variant": "monolith",
+      "method": "POST",
+      "path": "/user/update",
+      "symbol": "updateUser",
+      "source": "src/main/java/com/yupi/yuaicodemother/controller/UserController.java",
+      "line": 147,
+      "requirement": "R01",
+      "disposition": "rewrite-as-fastapi-contract"
+    },
+    {
+      "variant": "monolith",
+      "method": "POST",
+      "path": "/user/list/page/vo",
+      "symbol": "listUserVOByPage",
+      "source": "src/main/java/com/yupi/yuaicodemother/controller/UserController.java",
+      "line": 165,
+      "requirement": "R01",
+      "disposition": "rewrite-as-fastapi-contract"
+    },
+    {
+      "variant": "monolith",
+      "method": "POST",
+      "path": "/workflow/execute",
+      "symbol": "executeWorkflow",
+      "source": "src/main/java/com/yupi/yuaicodemother/controller/WorkflowSseController.java",
+      "line": 23,
+      "requirement": "R03",
+      "disposition": "rewrite-as-fastapi-contract"
+    },
+    {
+      "variant": "monolith",
+      "method": "GET",
+      "path": "/workflow/execute-flux",
+      "symbol": "executeWorkflowWithFlux",
+      "source": "src/main/java/com/yupi/yuaicodemother/controller/WorkflowSseController.java",
+      "line": 32,
+      "requirement": "R03",
+      "disposition": "rewrite-as-fastapi-contract"
+    },
+    {
+      "variant": "monolith",
+      "method": "GET",
+      "path": "/workflow/execute-sse",
+      "symbol": "executeWorkflowWithSse",
+      "source": "src/main/java/com/yupi/yuaicodemother/controller/WorkflowSseController.java",
+      "line": 41,
+      "requirement": "R03",
+      "disposition": "rewrite-as-fastapi-contract"
+    },
+    {
+      "variant": "microservice",
+      "method": "GET",
+      "path": "/app/chat/gen/code",
+      "symbol": "chatToGenCode",
+      "source": "yu-ai-code-mother-microservice/yu-ai-code-app/src/main/java/com/yupi/yuaicodemother/controller/AppController.java",
+      "line": 56,
+      "requirement": "R04",
+      "disposition": "rewrite-as-fastapi-contract"
+    },
+    {
+      "variant": "microservice",
+      "method": "POST",
+      "path": "/app/deploy",
+      "symbol": "deployApp",
+      "source": "yu-ai-code-mother-microservice/yu-ai-code-app/src/main/java/com/yupi/yuaicodemother/controller/AppController.java",
+      "line": 92,
+      "requirement": "R10",
+      "disposition": "rewrite-as-fastapi-contract"
+    },
+    {
+      "variant": "microservice",
+      "method": "GET",
+      "path": "/app/download/{appId}",
+      "symbol": "downloadAppCode",
+      "source": "yu-ai-code-mother-microservice/yu-ai-code-app/src/main/java/com/yupi/yuaicodemother/controller/AppController.java",
+      "line": 115,
+      "requirement": "R12",
+      "disposition": "rewrite-as-fastapi-contract"
+    },
+    {
+      "variant": "microservice",
+      "method": "POST",
+      "path": "/app/add",
+      "symbol": "addApp",
+      "source": "yu-ai-code-mother-microservice/yu-ai-code-app/src/main/java/com/yupi/yuaicodemother/controller/AppController.java",
+      "line": 150,
+      "requirement": "R02",
+      "disposition": "rewrite-as-fastapi-contract"
+    },
+    {
+      "variant": "microservice",
+      "method": "POST",
+      "path": "/app/update",
+      "symbol": "updateApp",
+      "source": "yu-ai-code-mother-microservice/yu-ai-code-app/src/main/java/com/yupi/yuaicodemother/controller/AppController.java",
+      "line": 166,
+      "requirement": "R02",
+      "disposition": "rewrite-as-fastapi-contract"
+    },
+    {
+      "variant": "microservice",
+      "method": "POST",
+      "path": "/app/delete",
+      "symbol": "deleteApp",
+      "source": "yu-ai-code-mother-microservice/yu-ai-code-app/src/main/java/com/yupi/yuaicodemother/controller/AppController.java",
+      "line": 197,
+      "requirement": "R02",
+      "disposition": "rewrite-as-fastapi-contract"
+    },
+    {
+      "variant": "microservice",
+      "method": "GET",
+      "path": "/app/get/vo",
+      "symbol": "getAppVOById",
+      "source": "yu-ai-code-mother-microservice/yu-ai-code-app/src/main/java/com/yupi/yuaicodemother/controller/AppController.java",
+      "line": 221,
+      "requirement": "R02",
+      "disposition": "rewrite-as-fastapi-contract"
+    },
+    {
+      "variant": "microservice",
+      "method": "POST",
+      "path": "/app/my/list/page/vo",
+      "symbol": "listMyAppVOByPage",
+      "source": "yu-ai-code-mother-microservice/yu-ai-code-app/src/main/java/com/yupi/yuaicodemother/controller/AppController.java",
+      "line": 238,
+      "requirement": "R02",
+      "disposition": "rewrite-as-fastapi-contract"
+    },
+    {
+      "variant": "microservice",
+      "method": "POST",
+      "path": "/app/good/list/page/vo",
+      "symbol": "listGoodAppVOByPage",
+      "source": "yu-ai-code-mother-microservice/yu-ai-code-app/src/main/java/com/yupi/yuaicodemother/controller/AppController.java",
+      "line": 263,
+      "requirement": "R13",
+      "disposition": "rewrite-as-fastapi-contract"
+    },
+    {
+      "variant": "microservice",
+      "method": "POST",
+      "path": "/app/admin/delete",
+      "symbol": "deleteAppByAdmin",
+      "source": "yu-ai-code-mother-microservice/yu-ai-code-app/src/main/java/com/yupi/yuaicodemother/controller/AppController.java",
+      "line": 293,
+      "requirement": "R13",
+      "disposition": "rewrite-as-fastapi-contract"
+    },
+    {
+      "variant": "microservice",
+      "method": "POST",
+      "path": "/app/admin/update",
+      "symbol": "updateAppByAdmin",
+      "source": "yu-ai-code-mother-microservice/yu-ai-code-app/src/main/java/com/yupi/yuaicodemother/controller/AppController.java",
+      "line": 313,
+      "requirement": "R13",
+      "disposition": "rewrite-as-fastapi-contract"
+    },
+    {
+      "variant": "microservice",
+      "method": "POST",
+      "path": "/app/admin/list/page/vo",
+      "symbol": "listAppVOByPageByAdmin",
+      "source": "yu-ai-code-mother-microservice/yu-ai-code-app/src/main/java/com/yupi/yuaicodemother/controller/AppController.java",
+      "line": 338,
+      "requirement": "R13",
+      "disposition": "rewrite-as-fastapi-contract"
+    },
+    {
+      "variant": "microservice",
+      "method": "GET",
+      "path": "/app/admin/get/vo",
+      "symbol": "getAppVOByIdByAdmin",
+      "source": "yu-ai-code-mother-microservice/yu-ai-code-app/src/main/java/com/yupi/yuaicodemother/controller/AppController.java",
+      "line": 359,
+      "requirement": "R13",
+      "disposition": "rewrite-as-fastapi-contract"
+    },
+    {
+      "variant": "microservice",
+      "method": "GET",
+      "path": "/chatHistory/app/{appId}",
+      "symbol": "listAppChatHistory",
+      "source": "yu-ai-code-mother-microservice/yu-ai-code-app/src/main/java/com/yupi/yuaicodemother/controller/ChatHistoryController.java",
+      "line": 43,
+      "requirement": "R05",
+      "disposition": "rewrite-as-fastapi-contract"
+    },
+    {
+      "variant": "microservice",
+      "method": "POST",
+      "path": "/chatHistory/admin/list/page/vo",
+      "symbol": "listAllChatHistoryByPageForAdmin",
+      "source": "yu-ai-code-mother-microservice/yu-ai-code-app/src/main/java/com/yupi/yuaicodemother/controller/ChatHistoryController.java",
+      "line": 59,
+      "requirement": "R13",
+      "disposition": "rewrite-as-fastapi-contract"
+    },
+    {
+      "variant": "microservice",
+      "method": "GET",
+      "path": "/static/{deployKey}/**",
+      "symbol": "serveStaticResource",
+      "source": "yu-ai-code-mother-microservice/yu-ai-code-app/src/main/java/com/yupi/yuaicodemother/controller/StaticResourceController.java",
+      "line": 32,
+      "requirement": "R09",
+      "disposition": "rewrite-as-fastapi-contract"
+    },
+    {
+      "variant": "microservice",
+      "method": "POST",
+      "path": "/user/register",
+      "symbol": "userRegister",
+      "source": "yu-ai-code-mother-microservice/yu-ai-code-user/src/main/java/com/yupi/yuaicodeuser/controller/UserController.java",
+      "line": 46,
+      "requirement": "R01",
+      "disposition": "rewrite-as-fastapi-contract"
+    },
+    {
+      "variant": "microservice",
+      "method": "POST",
+      "path": "/user/login",
+      "symbol": "userLogin",
+      "source": "yu-ai-code-mother-microservice/yu-ai-code-user/src/main/java/com/yupi/yuaicodeuser/controller/UserController.java",
+      "line": 63,
+      "requirement": "R01",
+      "disposition": "rewrite-as-fastapi-contract"
+    },
+    {
+      "variant": "microservice",
+      "method": "GET",
+      "path": "/user/get/login",
+      "symbol": "getLoginUser",
+      "source": "yu-ai-code-mother-microservice/yu-ai-code-user/src/main/java/com/yupi/yuaicodeuser/controller/UserController.java",
+      "line": 72,
+      "requirement": "R01",
+      "disposition": "rewrite-as-fastapi-contract"
+    },
+    {
+      "variant": "microservice",
+      "method": "POST",
+      "path": "/user/logout",
+      "symbol": "userLogout",
+      "source": "yu-ai-code-mother-microservice/yu-ai-code-user/src/main/java/com/yupi/yuaicodeuser/controller/UserController.java",
+      "line": 84,
+      "requirement": "R01",
+      "disposition": "rewrite-as-fastapi-contract"
+    },
+    {
+      "variant": "microservice",
+      "method": "POST",
+      "path": "/user/add",
+      "symbol": "addUser",
+      "source": "yu-ai-code-mother-microservice/yu-ai-code-user/src/main/java/com/yupi/yuaicodeuser/controller/UserController.java",
+      "line": 94,
+      "requirement": "R01",
+      "disposition": "rewrite-as-fastapi-contract"
+    },
+    {
+      "variant": "microservice",
+      "method": "GET",
+      "path": "/user/get",
+      "symbol": "getUserById",
+      "source": "yu-ai-code-mother-microservice/yu-ai-code-user/src/main/java/com/yupi/yuaicodeuser/controller/UserController.java",
+      "line": 112,
+      "requirement": "R01",
+      "disposition": "rewrite-as-fastapi-contract"
+    },
+    {
+      "variant": "microservice",
+      "method": "GET",
+      "path": "/user/get/vo",
+      "symbol": "getUserVOById",
+      "source": "yu-ai-code-mother-microservice/yu-ai-code-user/src/main/java/com/yupi/yuaicodeuser/controller/UserController.java",
+      "line": 124,
+      "requirement": "R01",
+      "disposition": "rewrite-as-fastapi-contract"
+    },
+    {
+      "variant": "microservice",
+      "method": "POST",
+      "path": "/user/delete",
+      "symbol": "deleteUser",
+      "source": "yu-ai-code-mother-microservice/yu-ai-code-user/src/main/java/com/yupi/yuaicodeuser/controller/UserController.java",
+      "line": 134,
+      "requirement": "R01",
+      "disposition": "rewrite-as-fastapi-contract"
+    },
+    {
+      "variant": "microservice",
+      "method": "POST",
+      "path": "/user/update",
+      "symbol": "updateUser",
+      "source": "yu-ai-code-mother-microservice/yu-ai-code-user/src/main/java/com/yupi/yuaicodeuser/controller/UserController.java",
+      "line": 147,
+      "requirement": "R01",
+      "disposition": "rewrite-as-fastapi-contract"
+    },
+    {
+      "variant": "microservice",
+      "method": "POST",
+      "path": "/user/list/page/vo",
+      "symbol": "listUserVOByPage",
+      "source": "yu-ai-code-mother-microservice/yu-ai-code-user/src/main/java/com/yupi/yuaicodeuser/controller/UserController.java",
+      "line": 165,
+      "requirement": "R01",
+      "disposition": "rewrite-as-fastapi-contract"
+    }
+  ],
+  "entities": [
+    {
+      "variant": "monolith",
+      "name": "App",
+      "table": "app",
+      "fields": [
+        {
+          "type": "Long",
+          "name": "id"
+        },
+        {
+          "type": "String",
+          "name": "appName"
+        },
+        {
+          "type": "String",
+          "name": "cover"
+        },
+        {
+          "type": "String",
+          "name": "initPrompt"
+        },
+        {
+          "type": "String",
+          "name": "codeGenType"
+        },
+        {
+          "type": "String",
+          "name": "deployKey"
+        },
+        {
+          "type": "LocalDateTime",
+          "name": "deployedTime"
+        },
+        {
+          "type": "Integer",
+          "name": "priority"
+        },
+        {
+          "type": "Long",
+          "name": "userId"
+        },
+        {
+          "type": "LocalDateTime",
+          "name": "editTime"
+        },
+        {
+          "type": "LocalDateTime",
+          "name": "createTime"
+        },
+        {
+          "type": "LocalDateTime",
+          "name": "updateTime"
+        },
+        {
+          "type": "Integer",
+          "name": "isDelete"
+        }
+      ],
+      "source": "src/main/java/com/yupi/yuaicodemother/model/entity/App.java",
+      "requirement": "R02",
+      "disposition": "rewrite-with-platform-schema"
+    },
+    {
+      "variant": "monolith",
+      "name": "ChatHistory",
+      "table": "chat_history",
+      "fields": [
+        {
+          "type": "Long",
+          "name": "id"
+        },
+        {
+          "type": "String",
+          "name": "message"
+        },
+        {
+          "type": "String",
+          "name": "messageType"
+        },
+        {
+          "type": "Long",
+          "name": "appId"
+        },
+        {
+          "type": "Long",
+          "name": "userId"
+        },
+        {
+          "type": "LocalDateTime",
+          "name": "createTime"
+        },
+        {
+          "type": "LocalDateTime",
+          "name": "updateTime"
+        },
+        {
+          "type": "Integer",
+          "name": "isDelete"
+        }
+      ],
+      "source": "src/main/java/com/yupi/yuaicodemother/model/entity/ChatHistory.java",
+      "requirement": "R05",
+      "disposition": "rewrite-with-platform-schema"
+    },
+    {
+      "variant": "monolith",
+      "name": "User",
+      "table": "user",
+      "fields": [
+        {
+          "type": "Long",
+          "name": "id"
+        },
+        {
+          "type": "String",
+          "name": "userAccount"
+        },
+        {
+          "type": "String",
+          "name": "userPassword"
+        },
+        {
+          "type": "String",
+          "name": "userName"
+        },
+        {
+          "type": "String",
+          "name": "userAvatar"
+        },
+        {
+          "type": "String",
+          "name": "userProfile"
+        },
+        {
+          "type": "String",
+          "name": "userRole"
+        },
+        {
+          "type": "LocalDateTime",
+          "name": "editTime"
+        },
+        {
+          "type": "LocalDateTime",
+          "name": "createTime"
+        },
+        {
+          "type": "LocalDateTime",
+          "name": "updateTime"
+        },
+        {
+          "type": "Integer",
+          "name": "isDelete"
+        }
+      ],
+      "source": "src/main/java/com/yupi/yuaicodemother/model/entity/User.java",
+      "requirement": "R01",
+      "disposition": "rewrite-with-platform-schema"
+    },
+    {
+      "variant": "microservice",
+      "name": "App",
+      "table": "app",
+      "fields": [
+        {
+          "type": "Long",
+          "name": "id"
+        },
+        {
+          "type": "String",
+          "name": "appName"
+        },
+        {
+          "type": "String",
+          "name": "cover"
+        },
+        {
+          "type": "String",
+          "name": "initPrompt"
+        },
+        {
+          "type": "String",
+          "name": "codeGenType"
+        },
+        {
+          "type": "String",
+          "name": "deployKey"
+        },
+        {
+          "type": "LocalDateTime",
+          "name": "deployedTime"
+        },
+        {
+          "type": "Integer",
+          "name": "priority"
+        },
+        {
+          "type": "Long",
+          "name": "userId"
+        },
+        {
+          "type": "LocalDateTime",
+          "name": "editTime"
+        },
+        {
+          "type": "LocalDateTime",
+          "name": "createTime"
+        },
+        {
+          "type": "LocalDateTime",
+          "name": "updateTime"
+        },
+        {
+          "type": "Integer",
+          "name": "isDelete"
+        }
+      ],
+      "source": "yu-ai-code-mother-microservice/yu-ai-code-model/src/main/java/com/yupi/yuaicodemother/model/entity/App.java",
+      "requirement": "R02",
+      "disposition": "rewrite-with-platform-schema"
+    },
+    {
+      "variant": "microservice",
+      "name": "ChatHistory",
+      "table": "chat_history",
+      "fields": [
+        {
+          "type": "Long",
+          "name": "id"
+        },
+        {
+          "type": "String",
+          "name": "message"
+        },
+        {
+          "type": "String",
+          "name": "messageType"
+        },
+        {
+          "type": "Long",
+          "name": "appId"
+        },
+        {
+          "type": "Long",
+          "name": "userId"
+        },
+        {
+          "type": "LocalDateTime",
+          "name": "createTime"
+        },
+        {
+          "type": "LocalDateTime",
+          "name": "updateTime"
+        },
+        {
+          "type": "Integer",
+          "name": "isDelete"
+        }
+      ],
+      "source": "yu-ai-code-mother-microservice/yu-ai-code-model/src/main/java/com/yupi/yuaicodemother/model/entity/ChatHistory.java",
+      "requirement": "R05",
+      "disposition": "rewrite-with-platform-schema"
+    },
+    {
+      "variant": "microservice",
+      "name": "User",
+      "table": "user",
+      "fields": [
+        {
+          "type": "Long",
+          "name": "id"
+        },
+        {
+          "type": "String",
+          "name": "userAccount"
+        },
+        {
+          "type": "String",
+          "name": "userPassword"
+        },
+        {
+          "type": "String",
+          "name": "userName"
+        },
+        {
+          "type": "String",
+          "name": "userAvatar"
+        },
+        {
+          "type": "String",
+          "name": "userProfile"
+        },
+        {
+          "type": "String",
+          "name": "userRole"
+        },
+        {
+          "type": "LocalDateTime",
+          "name": "editTime"
+        },
+        {
+          "type": "LocalDateTime",
+          "name": "createTime"
+        },
+        {
+          "type": "LocalDateTime",
+          "name": "updateTime"
+        },
+        {
+          "type": "Integer",
+          "name": "isDelete"
+        }
+      ],
+      "source": "yu-ai-code-mother-microservice/yu-ai-code-model/src/main/java/com/yupi/yuaicodemother/model/entity/User.java",
+      "requirement": "R01",
+      "disposition": "rewrite-with-platform-schema"
+    }
+  ],
+  "tools": [
+    {
+      "variant": "monolith",
+      "symbol": "exit",
+      "source": "src/main/java/com/yupi/yuaicodemother/ai/tools/ExitTool.java",
+      "line": 31,
+      "requirement": "R04",
+      "disposition": "rewrite-as-constrained-tool"
+    },
+    {
+      "variant": "monolith",
+      "symbol": "deleteFile",
+      "source": "src/main/java/com/yupi/yuaicodemother/ai/tools/FileDeleteTool.java",
+      "line": 24,
+      "requirement": "R04",
+      "disposition": "rewrite-as-constrained-tool"
+    },
+    {
+      "variant": "monolith",
+      "symbol": "readDir",
+      "source": "src/main/java/com/yupi/yuaicodemother/ai/tools/FileDirReadTool.java",
+      "line": 42,
+      "requirement": "R04",
+      "disposition": "rewrite-as-constrained-tool"
+    },
+    {
+      "variant": "monolith",
+      "symbol": "modifyFile",
+      "source": "src/main/java/com/yupi/yuaicodemother/ai/tools/FileModifyTool.java",
+      "line": 25,
+      "requirement": "R04",
+      "disposition": "rewrite-as-constrained-tool"
+    },
+    {
+      "variant": "monolith",
+      "symbol": "readFile",
+      "source": "src/main/java/com/yupi/yuaicodemother/ai/tools/FileReadTool.java",
+      "line": 24,
+      "requirement": "R04",
+      "disposition": "rewrite-as-constrained-tool"
+    },
+    {
+      "variant": "monolith",
+      "symbol": "writeFile",
+      "source": "src/main/java/com/yupi/yuaicodemother/ai/tools/FileWriteTool.java",
+      "line": 26,
+      "requirement": "R04",
+      "disposition": "rewrite-as-constrained-tool"
+    },
+    {
+      "variant": "monolith",
+      "symbol": "searchContentImages",
+      "source": "src/main/java/com/yupi/yuaicodemother/langgraph4j/tools/ImageSearchTool.java",
+      "line": 31,
+      "requirement": "R17",
+      "disposition": "rewrite-as-constrained-tool"
+    },
+    {
+      "variant": "monolith",
+      "symbol": "generateLogos",
+      "source": "src/main/java/com/yupi/yuaicodemother/langgraph4j/tools/LogoGeneratorTool.java",
+      "line": 32,
+      "requirement": "R17",
+      "disposition": "rewrite-as-constrained-tool"
+    },
+    {
+      "variant": "monolith",
+      "symbol": "generateMermaidDiagram",
+      "source": "src/main/java/com/yupi/yuaicodemother/langgraph4j/tools/MermaidDiagramTool.java",
+      "line": 34,
+      "requirement": "R17",
+      "disposition": "rewrite-as-constrained-tool"
+    },
+    {
+      "variant": "monolith",
+      "symbol": "searchIllustrations",
+      "source": "src/main/java/com/yupi/yuaicodemother/langgraph4j/tools/UndrawIllustrationTool.java",
+      "line": 28,
+      "requirement": "R17",
+      "disposition": "rewrite-as-constrained-tool"
+    },
+    {
+      "variant": "microservice",
+      "symbol": "exit",
+      "source": "yu-ai-code-mother-microservice/yu-ai-code-ai/src/main/java/com/yupi/yuaicodemother/ai/tools/ExitTool.java",
+      "line": 31,
+      "requirement": "R04",
+      "disposition": "rewrite-as-constrained-tool"
+    },
+    {
+      "variant": "microservice",
+      "symbol": "deleteFile",
+      "source": "yu-ai-code-mother-microservice/yu-ai-code-ai/src/main/java/com/yupi/yuaicodemother/ai/tools/FileDeleteTool.java",
+      "line": 24,
+      "requirement": "R04",
+      "disposition": "rewrite-as-constrained-tool"
+    },
+    {
+      "variant": "microservice",
+      "symbol": "readDir",
+      "source": "yu-ai-code-mother-microservice/yu-ai-code-ai/src/main/java/com/yupi/yuaicodemother/ai/tools/FileDirReadTool.java",
+      "line": 42,
+      "requirement": "R04",
+      "disposition": "rewrite-as-constrained-tool"
+    },
+    {
+      "variant": "microservice",
+      "symbol": "modifyFile",
+      "source": "yu-ai-code-mother-microservice/yu-ai-code-ai/src/main/java/com/yupi/yuaicodemother/ai/tools/FileModifyTool.java",
+      "line": 25,
+      "requirement": "R04",
+      "disposition": "rewrite-as-constrained-tool"
+    },
+    {
+      "variant": "microservice",
+      "symbol": "readFile",
+      "source": "yu-ai-code-mother-microservice/yu-ai-code-ai/src/main/java/com/yupi/yuaicodemother/ai/tools/FileReadTool.java",
+      "line": 24,
+      "requirement": "R04",
+      "disposition": "rewrite-as-constrained-tool"
+    },
+    {
+      "variant": "microservice",
+      "symbol": "writeFile",
+      "source": "yu-ai-code-mother-microservice/yu-ai-code-ai/src/main/java/com/yupi/yuaicodemother/ai/tools/FileWriteTool.java",
+      "line": 26,
+      "requirement": "R04",
+      "disposition": "rewrite-as-constrained-tool"
+    }
+  ],
+  "routes": [
+    {
+      "path": "/",
+      "source": "yu-ai-code-mother-frontend/src/router/index.ts",
+      "line": 15,
+      "requirement": "R02",
+      "disposition": "rewrite-as-nextjs-page"
+    },
+    {
+      "path": "/user/login",
+      "source": "yu-ai-code-mother-frontend/src/router/index.ts",
+      "line": 20,
+      "requirement": "R01",
+      "disposition": "rewrite-as-nextjs-page"
+    },
+    {
+      "path": "/user/register",
+      "source": "yu-ai-code-mother-frontend/src/router/index.ts",
+      "line": 25,
+      "requirement": "R01",
+      "disposition": "rewrite-as-nextjs-page"
+    },
+    {
+      "path": "/admin/userManage",
+      "source": "yu-ai-code-mother-frontend/src/router/index.ts",
+      "line": 30,
+      "requirement": "R13",
+      "disposition": "rewrite-as-nextjs-page"
+    },
+    {
+      "path": "/admin/appManage",
+      "source": "yu-ai-code-mother-frontend/src/router/index.ts",
+      "line": 35,
+      "requirement": "R13",
+      "disposition": "rewrite-as-nextjs-page"
+    },
+    {
+      "path": "/admin/chatManage",
+      "source": "yu-ai-code-mother-frontend/src/router/index.ts",
+      "line": 40,
+      "requirement": "R13",
+      "disposition": "rewrite-as-nextjs-page"
+    },
+    {
+      "path": "/app/chat/:id",
+      "source": "yu-ai-code-mother-frontend/src/router/index.ts",
+      "line": 45,
+      "requirement": "R06",
+      "disposition": "rewrite-as-nextjs-page"
+    },
+    {
+      "path": "/app/edit/:id",
+      "source": "yu-ai-code-mother-frontend/src/router/index.ts",
+      "line": 50,
+      "requirement": "R06",
+      "disposition": "rewrite-as-nextjs-page"
+    }
+  ],
+  "frontend_api": [
+    {
+      "symbol": "addApp",
+      "path": "/app/add",
+      "source": "yu-ai-code-mother-frontend/src/api/appController.ts",
+      "line": 6,
+      "requirement": "R02",
+      "disposition": "replace-with-generated-openapi-client"
+    },
+    {
+      "symbol": "deleteAppByAdmin",
+      "path": "/app/admin/delete",
+      "source": "yu-ai-code-mother-frontend/src/api/appController.ts",
+      "line": 18,
+      "requirement": "R13",
+      "disposition": "replace-with-generated-openapi-client"
+    },
+    {
+      "symbol": "getAppVoByIdByAdmin",
+      "path": "/app/admin/get/vo",
+      "source": "yu-ai-code-mother-frontend/src/api/appController.ts",
+      "line": 30,
+      "requirement": "R13",
+      "disposition": "replace-with-generated-openapi-client"
+    },
+    {
+      "symbol": "listAppVoByPageByAdmin",
+      "path": "/app/admin/list/page/vo",
+      "source": "yu-ai-code-mother-frontend/src/api/appController.ts",
+      "line": 45,
+      "requirement": "R13",
+      "disposition": "replace-with-generated-openapi-client"
+    },
+    {
+      "symbol": "updateAppByAdmin",
+      "path": "/app/admin/update",
+      "source": "yu-ai-code-mother-frontend/src/api/appController.ts",
+      "line": 60,
+      "requirement": "R13",
+      "disposition": "replace-with-generated-openapi-client"
+    },
+    {
+      "symbol": "chatToGenCode",
+      "path": "/app/chat/gen/code",
+      "source": "yu-ai-code-mother-frontend/src/api/appController.ts",
+      "line": 75,
+      "requirement": "R04",
+      "disposition": "replace-with-generated-openapi-client"
+    },
+    {
+      "symbol": "deleteApp",
+      "path": "/app/delete",
+      "source": "yu-ai-code-mother-frontend/src/api/appController.ts",
+      "line": 90,
+      "requirement": "R02",
+      "disposition": "replace-with-generated-openapi-client"
+    },
+    {
+      "symbol": "deployApp",
+      "path": "/app/deploy",
+      "source": "yu-ai-code-mother-frontend/src/api/appController.ts",
+      "line": 102,
+      "requirement": "R10",
+      "disposition": "replace-with-generated-openapi-client"
+    },
+    {
+      "symbol": "downloadAppCode",
+      "path": "/app/download/${param0}",
+      "source": "yu-ai-code-mother-frontend/src/api/appController.ts",
+      "line": 114,
+      "requirement": "R12",
+      "disposition": "replace-with-generated-openapi-client"
+    },
+    {
+      "symbol": "getAppVoById",
+      "path": "/app/get/vo",
+      "source": "yu-ai-code-mother-frontend/src/api/appController.ts",
+      "line": 128,
+      "requirement": "R02",
+      "disposition": "replace-with-generated-openapi-client"
+    },
+    {
+      "symbol": "listGoodAppVoByPage",
+      "path": "/app/good/list/page/vo",
+      "source": "yu-ai-code-mother-frontend/src/api/appController.ts",
+      "line": 143,
+      "requirement": "R13",
+      "disposition": "replace-with-generated-openapi-client"
+    },
+    {
+      "symbol": "listMyAppVoByPage",
+      "path": "/app/my/list/page/vo",
+      "source": "yu-ai-code-mother-frontend/src/api/appController.ts",
+      "line": 158,
+      "requirement": "R02",
+      "disposition": "replace-with-generated-openapi-client"
+    },
+    {
+      "symbol": "updateApp",
+      "path": "/app/update",
+      "source": "yu-ai-code-mother-frontend/src/api/appController.ts",
+      "line": 173,
+      "requirement": "R02",
+      "disposition": "replace-with-generated-openapi-client"
+    },
+    {
+      "symbol": "listAllChatHistoryByPageForAdmin",
+      "path": "/chatHistory/admin/list/page/vo",
+      "source": "yu-ai-code-mother-frontend/src/api/chatHistoryController.ts",
+      "line": 6,
+      "requirement": "R13",
+      "disposition": "replace-with-generated-openapi-client"
+    },
+    {
+      "symbol": "listAppChatHistory",
+      "path": "/chatHistory/app/${param0}",
+      "source": "yu-ai-code-mother-frontend/src/api/chatHistoryController.ts",
+      "line": 21,
+      "requirement": "R05",
+      "disposition": "replace-with-generated-openapi-client"
+    },
+    {
+      "symbol": "healthCheck",
+      "path": "/health/",
+      "source": "yu-ai-code-mother-frontend/src/api/healthController.ts",
+      "line": 6,
+      "requirement": "R09",
+      "disposition": "replace-with-generated-openapi-client"
+    },
+    {
+      "symbol": "serveStaticResource",
+      "path": "/static/${param0}/**",
+      "source": "yu-ai-code-mother-frontend/src/api/staticResourceController.ts",
+      "line": 6,
+      "requirement": "R09",
+      "disposition": "replace-with-generated-openapi-client"
+    },
+    {
+      "symbol": "addUser",
+      "path": "/user/add",
+      "source": "yu-ai-code-mother-frontend/src/api/userController.ts",
+      "line": 6,
+      "requirement": "R01",
+      "disposition": "replace-with-generated-openapi-client"
+    },
+    {
+      "symbol": "deleteUser",
+      "path": "/user/delete",
+      "source": "yu-ai-code-mother-frontend/src/api/userController.ts",
+      "line": 18,
+      "requirement": "R01",
+      "disposition": "replace-with-generated-openapi-client"
+    },
+    {
+      "symbol": "getUserById",
+      "path": "/user/get",
+      "source": "yu-ai-code-mother-frontend/src/api/userController.ts",
+      "line": 30,
+      "requirement": "R01",
+      "disposition": "replace-with-generated-openapi-client"
+    },
+    {
+      "symbol": "getLoginUser",
+      "path": "/user/get/login",
+      "source": "yu-ai-code-mother-frontend/src/api/userController.ts",
+      "line": 45,
+      "requirement": "R01",
+      "disposition": "replace-with-generated-openapi-client"
+    },
+    {
+      "symbol": "getUserVoById",
+      "path": "/user/get/vo",
+      "source": "yu-ai-code-mother-frontend/src/api/userController.ts",
+      "line": 53,
+      "requirement": "R01",
+      "disposition": "replace-with-generated-openapi-client"
+    },
+    {
+      "symbol": "listUserVoByPage",
+      "path": "/user/list/page/vo",
+      "source": "yu-ai-code-mother-frontend/src/api/userController.ts",
+      "line": 68,
+      "requirement": "R01",
+      "disposition": "replace-with-generated-openapi-client"
+    },
+    {
+      "symbol": "userLogin",
+      "path": "/user/login",
+      "source": "yu-ai-code-mother-frontend/src/api/userController.ts",
+      "line": 83,
+      "requirement": "R01",
+      "disposition": "replace-with-generated-openapi-client"
+    },
+    {
+      "symbol": "userLogout",
+      "path": "/user/logout",
+      "source": "yu-ai-code-mother-frontend/src/api/userController.ts",
+      "line": 95,
+      "requirement": "R01",
+      "disposition": "replace-with-generated-openapi-client"
+    },
+    {
+      "symbol": "userRegister",
+      "path": "/user/register",
+      "source": "yu-ai-code-mother-frontend/src/api/userController.ts",
+      "line": 103,
+      "requirement": "R01",
+      "disposition": "replace-with-generated-openapi-client"
+    },
+    {
+      "symbol": "updateUser",
+      "path": "/user/update",
+      "source": "yu-ai-code-mother-frontend/src/api/userController.ts",
+      "line": 118,
+      "requirement": "R01",
+      "disposition": "replace-with-generated-openapi-client"
+    }
+  ],
+  "consumers": [
+    {
+      "source": "yu-ai-code-mother-frontend/src/pages/HomePage.vue",
+      "line": 6,
+      "interface": "appController",
+      "disposition": "replace-with-nextjs-api-consumer"
+    },
+    {
+      "source": "yu-ai-code-mother-frontend/src/pages/admin/AppManagePage.vue",
+      "line": 95,
+      "interface": "appController",
+      "disposition": "replace-with-nextjs-api-consumer"
+    },
+    {
+      "source": "yu-ai-code-mother-frontend/src/pages/admin/ChatManagePage.vue",
+      "line": 72,
+      "interface": "chatHistoryController",
+      "disposition": "replace-with-nextjs-api-consumer"
+    },
+    {
+      "source": "yu-ai-code-mother-frontend/src/pages/app/AppChatPage.vue",
+      "line": 221,
+      "interface": "appController",
+      "disposition": "replace-with-nextjs-api-consumer"
+    },
+    {
+      "source": "yu-ai-code-mother-frontend/src/pages/app/AppChatPage.vue",
+      "line": 222,
+      "interface": "chatHistoryController",
+      "disposition": "replace-with-nextjs-api-consumer"
+    },
+    {
+      "source": "yu-ai-code-mother-frontend/src/pages/app/AppChatPage.vue",
+      "line": 496,
+      "interface": "direct-eventsource",
+      "disposition": "replace-with-authorized-run-stream-or-download"
+    },
+    {
+      "source": "yu-ai-code-mother-frontend/src/pages/app/AppChatPage.vue",
+      "line": 621,
+      "interface": "direct-fetch",
+      "disposition": "replace-with-authorized-run-stream-or-download"
+    },
+    {
+      "source": "yu-ai-code-mother-frontend/src/pages/app/AppEditPage.vue",
+      "line": 124,
+      "interface": "appController",
+      "disposition": "replace-with-nextjs-api-consumer"
+    }
+  ]
+}

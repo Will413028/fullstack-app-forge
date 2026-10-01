@@ -1,0 +1,29 @@
+F
+======================================================================
+FAIL: test_late_attach_cannot_follow_empty_query_and_delete_backing (test_loop_quota_safety.DockerUncertaintyTests.test_late_attach_cannot_follow_empty_query_and_delete_backing)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/will/second-brain/.projects/personal/fullstack-app-forge/docs/plans/2026-10-01-full-rebuild/test_loop_quota_safety.py", line 79, in test_late_attach_cannot_follow_empty_query_and_delete_backing
+    self.assertIn(result["backing_volume"], volumes)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'forge-loop-853f994d8322-images' not found in set()
+
+----------------------------------------------------------------------
+Ran 1 test in 0.024s
+
+FAILED (failures=1)
+F
+======================================================================
+FAIL: test_foreign_device_collision_refuses_detach_and_backing_deletion (test_loop_quota_safety.DockerUncertaintyTests.test_foreign_device_collision_refuses_detach_and_backing_deletion)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/will/second-brain/.projects/personal/fullstack-app-forge/docs/plans/2026-10-01-full-rebuild/test_loop_quota_safety.py", line 93, in test_foreign_device_collision_refuses_detach_and_backing_deletion
+    self.assertIn(result["backing_volume"], volumes)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'forge-loop-e40078dc8812-images' not found in set()
+
+----------------------------------------------------------------------
+Ran 1 test in 0.012s
+
+FAILED (failures=1)
+Both unsafe cleanup/identity mutations rejected by regression tests

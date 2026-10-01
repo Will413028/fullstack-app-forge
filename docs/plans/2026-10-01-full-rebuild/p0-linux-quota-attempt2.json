@@ -1,0 +1,56 @@
+{
+  "checks": [],
+  "error": "RuntimeError: limactl operation failed, exit 1; diagnostic categories: too long",
+  "cleanup": {
+    "vm": true,
+    "disks": true,
+    "temporary_files": true,
+    "errors": []
+  },
+  "work_path": "/Users/will/second-brain/.projects/personal/fullstack-app-forge/docs/plans/2026-10-01-full-rebuild/linux-quota-mrribmqm",
+  "elapsed_seconds": 2.976,
+  "timings": [
+    {
+      "command": "limactl",
+      "seconds": 0.673,
+      "exit_code": 0
+    },
+    {
+      "command": "limactl",
+      "seconds": 0.103,
+      "exit_code": 0
+    },
+    {
+      "command": "limactl",
+      "seconds": 0.585,
+      "exit_code": 1
+    },
+    {
+      "command": "limactl",
+      "seconds": 0.728,
+      "exit_code": 0
+    },
+    {
+      "command": "limactl",
+      "seconds": 0.296,
+      "exit_code": 0
+    },
+    {
+      "command": "limactl",
+      "seconds": 0.342,
+      "exit_code": 0
+    },
+    {
+      "command": "limactl",
+      "seconds": 0.167,
+      "exit_code": 0
+    },
+    {
+      "command": "limactl",
+      "seconds": 0.08,
+      "exit_code": 0
+    }
+  ],
+  "postgres_image": "sha256:25a89970a83255ae96484d709005bb35aa71f7455f941bc1634514f31c5d5c62",
+  "python_image": "sha256:75496575cd8e3aeb3fe561f0384f661d490c14770eda935d2302d61ca20a0b2d"
+}

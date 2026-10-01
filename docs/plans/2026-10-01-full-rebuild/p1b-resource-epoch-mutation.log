@@ -1,0 +1,21 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+_____________ test_reserved_resource_never_created_after_old_epoch _____________
+
+fixture = (<forge.runs.RunStore object at 0x1094abb00>, UUID('54de51bb-ed0c-4f2b-989b-d0edeb09fa76'), UUID('ef411ace-e17a-4f3e-be08-7c19964d5360'), UUID('32a58179-74c9-44b9-b275-697166dd163a'))
+
+    async def test_reserved_resource_never_created_after_old_epoch(fixture):
+        store, resources, owner, app, run, row = await resource_fixture(fixture)
+        same = await resources.reserve(run["id"], run["epoch"], slot="db", kind="volume")
+        assert same["external_name"] == row["external_name"]
+        async with store.db.transaction() as conn:
+            await conn.execute("UPDATE runs SET epoch=epoch+1 WHERE id=%s", (run["id"],))
+>       with pytest.raises(ResourceFenceError):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ResourceFenceError
+
+backend/tests/test_run_store.py:367: Failed
+=========================== short test summary info ============================
+FAILED backend/tests/test_run_store.py::test_reserved_resource_never_created_after_old_epoch
+1 failed, 20 deselected in 65.11s (0:01:05)
+PASS: removing run epoch fencing makes the resource create regression fail

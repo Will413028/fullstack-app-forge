@@ -1,0 +1,15 @@
+{
+  "app_id": "b10c4885-3b69-4035-8286-a5cd07a21bf6",
+  "run_id": "21f01844-b4cc-48d6-aca9-799f3b7f5e7b",
+  "register": true,
+  "app_create": true,
+  "queued_event": true,
+  "cancel": true,
+  "replay_did_not_create_run": true,
+  "app_update": true,
+  "tombstone_delete": true,
+  "logout_login": true,
+  "owner_isolation": true,
+  "proxy_body_limit": true,
+  "scope": "platform browser/API/DB only; no generated app or model completion"
+}

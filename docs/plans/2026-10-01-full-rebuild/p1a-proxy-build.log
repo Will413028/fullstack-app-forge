@@ -1,0 +1,24 @@
+$ pnpm --filter @forge/web build
+$ next build
+▲ Next.js 16.3.8 (Turbopack)
+✓ Running next.config.ts took 6.5s
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 41s
+  Running TypeScript ...
+  Finished TypeScript in 2.9min ...
+  Collecting page data using 6 workers ...
+  Generating static pages using 6 workers (0/3) ...
+✓ Generating static pages using 6 workers (3/3) in 7.2s
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ƒ /apps/[id]
+└ ƒ /v1/[...path]
+
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+

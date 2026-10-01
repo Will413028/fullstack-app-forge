@@ -1,0 +1,7 @@
+{
+  "vm": true,
+  "disks": true,
+  "temporary_files": true,
+  "errors": [],
+  "scope": "only owned /private/tmp/fq-qgrrz1s2; original failed result unchanged"
+}

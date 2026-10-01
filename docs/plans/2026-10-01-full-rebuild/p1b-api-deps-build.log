@@ -1,0 +1,82 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile.api-deps
+#1 transferring dockerfile:
+#1 transferring dockerfile: 430B 0.0s done
+#1 DONE 0.3s
+
+#2 [internal] load metadata for docker.io/library/python@sha256:392307d22300de8b5986851a12d9176dfc0fc073e65bf6523ebd7dcbeb23564e
+#2 DONE 0.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 94B done
+#3 DONE 0.1s
+
+#4 [internal] load build context
+#4 DONE 0.0s
+
+#5 [1/4] FROM docker.io/library/python@sha256:392307d22300de8b5986851a12d9176dfc0fc073e65bf6523ebd7dcbeb23564e
+#5 CACHED
+
+#4 [internal] load build context
+#4 transferring context: 6.48kB 0.0s done
+#4 DONE 0.1s
+
+#6 [2/4] COPY requirements.txt /opt/template-deps/requirements.txt
+#6 DONE 0.1s
+
+#7 [3/4] RUN pip install --no-cache-dir --only-binary=:all: --require-hashes     --index-url https://pypi.org/simple -r /opt/template-deps/requirements.txt
+#7 7.453 Ignoring tzdata: markers 'sys_platform == "win32"' don't match your environment
+#7 7.977 Collecting annotated-doc==0.0.5 (from -r /opt/template-deps/requirements.txt (line 3))
+#7 8.558   Downloading annotated_doc-0.0.5-py3-none-any.whl (5.3 kB)
+#7 9.029 Collecting annotated-types==0.8.0 (from -r /opt/template-deps/requirements.txt (line 7))
+#7 9.235   Downloading annotated_types-0.8.0-py3-none-any.whl (13 kB)
+#7 9.523 Collecting anyio==4.15.1 (from -r /opt/template-deps/requirements.txt (line 11))
+#7 9.616   Downloading anyio-4.15.1-py3-none-any.whl (132 kB)
+#7 11.26 Collecting click==8.5.0 (from -r /opt/template-deps/requirements.txt (line 15))
+#7 11.36   Downloading click-8.5.0-py3-none-any.whl (125 kB)
+#7 18.06 Collecting fastapi==0.142.2 (from -r /opt/template-deps/requirements.txt (line 19))
+#7 18.20   Downloading fastapi-0.142.2-py3-none-any.whl (144 kB)
+#7 21.25 Collecting h11==0.16.0 (from -r /opt/template-deps/requirements.txt (line 23))
+#7 21.40   Downloading h11-0.16.0-py3-none-any.whl (37 kB)
+#7 22.76 Collecting idna==3.20 (from -r /opt/template-deps/requirements.txt (line 27))
+#7 22.88   Downloading idna-3.20-py3-none-any.whl (69 kB)
+#7 24.53 Collecting opentelemetry-api==1.45.0 (from -r /opt/template-deps/requirements.txt (line 31))
+#7 24.71   Downloading opentelemetry_api-1.45.0-py3-none-any.whl (60 kB)
+#7 26.41 Collecting psycopg==3.3.6 (from -r /opt/template-deps/requirements.txt (line 35))
+#7 26.48   Downloading psycopg-3.3.6-py3-none-any.whl (215 kB)
+#7 35.69 Collecting psycopg-binary==3.3.6 (from -r /opt/template-deps/requirements.txt (line 39))
+#7 35.77   Downloading psycopg_binary-3.3.6-cp312-cp312-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl (6.8 MB)
+#7 52.97      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.8/6.8 MB 514.9 kB/s eta 0:00:00
+#7 54.58 Collecting pydantic==2.13.5 (from -r /opt/template-deps/requirements.txt (line 52))
+#7 54.66   Downloading pydantic-2.13.5-py3-none-any.whl (472 kB)
+#7 61.61 Collecting pydantic-core==2.46.5 (from -r /opt/template-deps/requirements.txt (line 56))
+#7 61.69   Downloading pydantic_core-2.46.5-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl (2.0 MB)
+#7 64.40      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.0/2.0 MB 759.6 kB/s eta 0:00:00
+#7 64.66 Collecting starlette==1.7.0 (from -r /opt/template-deps/requirements.txt (line 78))
+#7 64.74   Downloading starlette-1.7.0-py3-none-any.whl (78 kB)
+#7 65.07 Collecting typing-extensions==4.16.0 (from -r /opt/template-deps/requirements.txt (line 82))
+#7 65.15   Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+#7 65.27 Collecting typing-inspection==0.4.4 (from -r /opt/template-deps/requirements.txt (line 94))
+#7 65.33   Downloading typing_inspection-0.4.4-py3-none-any.whl (14 kB)
+#7 65.46 Collecting uvicorn==0.54.0 (from -r /opt/template-deps/requirements.txt (line 104))
+#7 65.52   Downloading uvicorn-0.54.0-py3-none-any.whl (87 kB)
+#7 65.90 Installing collected packages: typing-extensions, psycopg-binary, idna, h11, click, annotated-types, annotated-doc, uvicorn, typing-inspection, pydantic-core, psycopg, opentelemetry-api, anyio, starlette, pydantic, fastapi
+#7 73.16 Successfully installed annotated-doc-0.0.5 annotated-types-0.8.0 anyio-4.15.1 click-8.5.0 fastapi-0.142.2 h11-0.16.0 idna-3.20 opentelemetry-api-1.45.0 psycopg-3.3.6 psycopg-binary-3.3.6 pydantic-2.13.5 pydantic-core-2.46.5 starlette-1.7.0 typing-extensions-4.16.0 typing-inspection-0.4.4 uvicorn-0.54.0
+#7 73.16 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+#7 74.51 
+#7 74.51 [notice] A new release of pip is available: 25.0.1 -> 26.2.1
+#7 74.51 [notice] To update, run: pip install --upgrade pip
+#7 DONE 80.4s
+
+#8 [4/4] WORKDIR /workspace/backend
+#8 DONE 0.4s
+
+#9 exporting to image
+#9 exporting layers
+#9 exporting layers 2.3s done
+#9 writing image sha256:48eb8752b64fe4e108118b6bb726c5428c045aeea438ac854a21ec3365534f68 0.0s done
+#9 naming to docker.io/library/forge-api-deps:p1 0.0s done
+#9 DONE 2.4s
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/tgo0kat4ys1zmo3rdt3opwdwl

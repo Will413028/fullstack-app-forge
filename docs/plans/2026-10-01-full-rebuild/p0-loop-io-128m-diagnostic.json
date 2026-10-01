@@ -1,0 +1,446 @@
+{
+  "checks": [
+    {
+      "name": "db-filesystem",
+      "passed": true,
+      "evidence": {
+        "capacity_bytes": 241081344,
+        "fstype": "ext4",
+        "source": "/dev/loop0",
+        "device_number": "7:0",
+        "configured_bytes": 268435456,
+        "uuid": "a87bf453-c191-4214-bbb7-070e7f662963"
+      }
+    },
+    {
+      "name": "artifact-filesystem",
+      "passed": true,
+      "evidence": {
+        "capacity_bytes": 241081344,
+        "fstype": "ext4",
+        "source": "/dev/loop1",
+        "device_number": "7:1",
+        "configured_bytes": 268435456,
+        "uuid": "0197ede9-45d4-4476-83c7-d50eaa5d1619"
+      }
+    },
+    {
+      "name": "db-io-diagnostic",
+      "passed": true,
+      "evidence": {
+        "written": 134217728,
+        "write_samples_seconds": [
+          0.9786600419993192,
+          1.085931666999386,
+          1.3006602089999433,
+          1.520982749999348,
+          1.8248067919994355,
+          2.008695916999386,
+          2.0131020419994456,
+          2.035925250999753,
+          2.1328290839992405,
+          2.421662834000017,
+          2.4285498760000337,
+          2.46658137599934,
+          3.1181531679994805,
+          3.3910072099997706,
+          3.6162719179992564,
+          3.7707354179992763,
+          3.9413705849992766,
+          4.027777710000009,
+          4.124937085000056,
+          4.294996792999882,
+          4.332065792999856,
+          4.5254463349992875,
+          4.851787876999879,
+          7.290630919999785,
+          7.477287544999854,
+          7.8335804620001,
+          8.009055003999492,
+          8.12466416999996,
+          8.346063336999578,
+          8.547820669999965,
+          8.8683062959999,
+          8.920255045999511,
+          9.026991253999768,
+          9.033211504000064,
+          9.075856211999962,
+          9.122154420999323,
+          9.125128753999888,
+          9.13731192099931,
+          9.276078961999701,
+          9.426071838000098,
+          9.533095420999416,
+          9.648923337999804,
+          9.904685962999793,
+          10.086814045999745,
+          10.538785712999925,
+          10.785134129999278,
+          11.290130587999556,
+          11.309543129999838,
+          11.336877171999731,
+          11.402091588000076,
+          11.413460379999378,
+          11.67700342199987,
+          11.785513338999408,
+          12.106483046999529,
+          12.117269588999989,
+          12.241104255999744,
+          12.391826963999847,
+          12.60648313099955,
+          12.815358963999643,
+          15.159871548999945,
+          17.19367704999968,
+          17.22450388299967,
+          17.231038633000026,
+          17.328678174999368,
+          17.350117549999595,
+          17.364508674999342,
+          17.402916132999962,
+          17.423156340999412,
+          17.437003383000047,
+          17.528769840999303,
+          17.618070090999936,
+          17.62522675799937,
+          17.65011800799948,
+          17.82647021699995,
+          17.91766854999969,
+          17.931307883000045,
+          17.98578463299964,
+          17.99043546699977,
+          17.99732246699932,
+          18.014253800000006,
+          18.044003049999446,
+          18.28393396699994,
+          18.300050757999998,
+          18.30297709199931,
+          18.39700159199947,
+          18.431487341999855,
+          18.44198000799952,
+          18.4778365079992,
+          18.478775425000094,
+          18.50073034199977,
+          18.52344746699964,
+          18.536388633999195,
+          18.54482304999965,
+          18.617538216999492,
+          18.675662549999288,
+          18.724859758999628,
+          18.791145841999423,
+          18.80291963399941,
+          18.809291091999512,
+          18.816564049999215,
+          18.819605508999302,
+          18.82939442499992,
+          18.902997966999465,
+          18.95374817499942,
+          19.0299144669998,
+          19.046311966999383,
+          19.102320341999985,
+          19.108358258999942,
+          19.13239600899942,
+          19.13410834199931,
+          19.16146638400005,
+          19.1947680509993,
+          19.204543258999365,
+          19.206348800999876,
+          19.223568341999453,
+          19.224913841999296,
+          19.227749300999676,
+          19.234418342000026,
+          19.314542841999355,
+          19.39531788399927,
+          19.40989809199982,
+          19.423253551000016,
+          19.426792091999232,
+          19.427771675999793,
+          21.71605030199953,
+          22.002672426999197,
+          22.048830218999683,
+          22.051534843999434
+        ],
+        "fsync_seconds": 0.4871677089995501,
+        "total_seconds": 22.606078259999776
+      }
+    }
+  ],
+  "error": null,
+  "cleanup": {
+    "containers": true,
+    "volumes": true,
+    "loop_devices": true,
+    "backing_volume": true,
+    "errors": []
+  },
+  "prefix": "forge-loop-701873a297b4",
+  "backing_volume": "forge-loop-701873a297b4-images",
+  "controller": "forge-loop-701873a297b4-controller",
+  "remaining_loops": {},
+  "pending_attach": [],
+  "timings": [
+    {
+      "operation": "image",
+      "seconds": 1.372,
+      "exit_code": 0
+    },
+    {
+      "operation": "volume",
+      "seconds": 1.367,
+      "exit_code": 0
+    },
+    {
+      "operation": "run",
+      "seconds": 7.782,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 3.827,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 13.831,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 6.482,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 2.953,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 3.294,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 1.412,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 1.107,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 2.503,
+      "exit_code": 0
+    },
+    {
+      "operation": "volume",
+      "seconds": 1.127,
+      "exit_code": 0
+    },
+    {
+      "operation": "volume",
+      "seconds": 0.144,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 1.064,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 1.697,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 0.983,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 0.938,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 0.911,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 0.633,
+      "exit_code": 0
+    },
+    {
+      "operation": "volume",
+      "seconds": 0.54,
+      "exit_code": 0
+    },
+    {
+      "operation": "volume",
+      "seconds": 0.198,
+      "exit_code": 0
+    },
+    {
+      "operation": "run",
+      "seconds": 3.193,
+      "exit_code": 0
+    },
+    {
+      "operation": "wait",
+      "seconds": 5.068,
+      "exit_code": 0
+    },
+    {
+      "operation": "logs",
+      "seconds": 0.346,
+      "exit_code": 0
+    },
+    {
+      "operation": "rm",
+      "seconds": 0.385,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 2.944,
+      "exit_code": 0
+    },
+    {
+      "operation": "run",
+      "seconds": 15.581,
+      "exit_code": 0
+    },
+    {
+      "operation": "wait",
+      "seconds": 10.591,
+      "exit_code": 0
+    },
+    {
+      "operation": "logs",
+      "seconds": 0.724,
+      "exit_code": 0
+    },
+    {
+      "operation": "rm",
+      "seconds": 1.312,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 5.957,
+      "exit_code": 0
+    },
+    {
+      "operation": "run",
+      "seconds": 15.227,
+      "exit_code": 0
+    },
+    {
+      "operation": "wait",
+      "seconds": 37.291,
+      "exit_code": 0
+    },
+    {
+      "operation": "logs",
+      "seconds": 0.542,
+      "exit_code": 0
+    },
+    {
+      "operation": "rm",
+      "seconds": 0.767,
+      "exit_code": 0
+    },
+    {
+      "operation": "rm",
+      "seconds": 0.341,
+      "exit_code": 0
+    },
+    {
+      "operation": "rm",
+      "seconds": 0.565,
+      "exit_code": 0
+    },
+    {
+      "operation": "rm",
+      "seconds": 0.816,
+      "exit_code": 0
+    },
+    {
+      "operation": "volume",
+      "seconds": 1.739,
+      "exit_code": 0
+    },
+    {
+      "operation": "volume",
+      "seconds": 0.829,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 2.16,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 5.014,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 7.141,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 5.713,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 4.128,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 2.669,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 2.621,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 4.927,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 2.537,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 1.362,
+      "exit_code": 0
+    },
+    {
+      "operation": "rm",
+      "seconds": 2.462,
+      "exit_code": 0
+    },
+    {
+      "operation": "volume",
+      "seconds": 1.007,
+      "exit_code": 0
+    }
+  ],
+  "diagnostics": [],
+  "scope": "128MiB I/O diagnostic only; not quota acceptance",
+  "tools_image_id": "sha256:35175b730c0fb88c24d2dcbd5869cee7d8cb8913638f2ec1fdb338e10dd117dd",
+  "tools_versions": "e2fsprogs: Standard Ext2/3/4 filesystem utilities\ne2fsprogs: https://e2fsprogs.sourceforge.net/\ne2fsprogs: 471 KiB\nutil-linux: Random collection of Linux utilities\nutil-linux: https://git.kernel.org/cgit/utils/util-linux/util-linux.git\nutil-linux: 1 B"
+}

@@ -1,0 +1,5 @@
+owned-loop-controller-ready
+db-filesystem: True
+artifact-filesystem: True
+db-io-diagnostic: True
+{"checks": 3, "error": null, "cleanup": {"containers": true, "volumes": true, "loop_devices": true, "backing_volume": true, "errors": []}}

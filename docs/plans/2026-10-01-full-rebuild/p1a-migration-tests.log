@@ -1,0 +1,282 @@
+EE                                                                       [100%]
+==================================== ERRORS ====================================
+_____ ERROR at setup of test_platform_migrations_reopen_without_reapplying _____
+
+    @pytest_asyncio.fixture(scope="module", loop_scope="module")
+    async def database():
+        docker = shutil.which("docker")
+        if not docker:
+            pytest.fail("Docker is required for real PostgreSQL store tests")
+        name = "forge-store-test-" + uuid4().hex[:12]
+    
+        def command(*args, check=True):
+            result = subprocess.run([docker, *args], capture_output=True, timeout=60, check=check)
+            return result.stdout.decode().strip()
+    
+        db = None
+        try:
+            command(
+                "run",
+                "--pull=never",
+                "-d",
+                "--name",
+                name,
+                "--cpus=.5",
+                "--memory=256m",
+                "--memory-swap=256m",
+                "--pids-limit=64",
+                "-p",
+                "127.0.0.1::5432",
+                "-e",
+                "POSTGRES_HOST_AUTH_METHOD=trust",
+                "-e",
+                "POSTGRES_DB=forge",
+                PG,
+            )
+            port = command("port", name, "5432/tcp").rsplit(":", 1)[1]
+            settings = Settings(database_url=f"postgresql://postgres@127.0.0.1:{port}/forge")
+            for _ in range(90):
+                try:
+>                   assert command("exec", name, "cat", "/proc/1/comm") == "postgres"
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_run_store.py:57: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_run_store.py:30: in command
+    result = subprocess.run([docker, *args], capture_output=True, timeout=60, check=check)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/Users/will/.local/share/uv/python/cpython-3.12-macos-aarch64-none/lib/python3.12/subprocess.py:552: in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/Users/will/.local/share/uv/python/cpython-3.12-macos-aarch64-none/lib/python3.12/subprocess.py:1211: in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/Users/will/.local/share/uv/python/cpython-3.12-macos-aarch64-none/lib/python3.12/subprocess.py:2124: in _communicate
+    self._check_timeout(endtime, orig_timeout, stdout, stderr)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <Popen: returncode: -9 args: ['/opt/homebrew/bin/docker', 'exec', 'forge-sto...>
+endtime = 718411.949557, orig_timeout = 60, stdout_seq = [], stderr_seq = []
+skip_check_and_raise = False
+
+    def _check_timeout(self, endtime, orig_timeout, stdout_seq, stderr_seq,
+                       skip_check_and_raise=False):
+        """Convenience for checking if a timeout has expired."""
+        if endtime is None:
+            return
+        if skip_check_and_raise or _time() > endtime:
+>           raise TimeoutExpired(
+                    self.args, orig_timeout,
+                    output=b''.join(stdout_seq) if stdout_seq else None,
+                    stderr=b''.join(stderr_seq) if stderr_seq else None)
+E           subprocess.TimeoutExpired: Command '['/opt/homebrew/bin/docker', 'exec', 'forge-store-test-f05a7eac6d91', 'cat', '/proc/1/comm']' timed out after 60 seconds
+
+/Users/will/.local/share/uv/python/cpython-3.12-macos-aarch64-none/lib/python3.12/subprocess.py:1255: TimeoutExpired
+
+During handling of the above exception, another exception occurred:
+
+    @pytest_asyncio.fixture(scope="module", loop_scope="module")
+    async def database():
+        docker = shutil.which("docker")
+        if not docker:
+            pytest.fail("Docker is required for real PostgreSQL store tests")
+        name = "forge-store-test-" + uuid4().hex[:12]
+    
+        def command(*args, check=True):
+            result = subprocess.run([docker, *args], capture_output=True, timeout=60, check=check)
+            return result.stdout.decode().strip()
+    
+        db = None
+        try:
+            command(
+                "run",
+                "--pull=never",
+                "-d",
+                "--name",
+                name,
+                "--cpus=.5",
+                "--memory=256m",
+                "--memory-swap=256m",
+                "--pids-limit=64",
+                "-p",
+                "127.0.0.1::5432",
+                "-e",
+                "POSTGRES_HOST_AUTH_METHOD=trust",
+                "-e",
+                "POSTGRES_DB=forge",
+                PG,
+            )
+            port = command("port", name, "5432/tcp").rsplit(":", 1)[1]
+            settings = Settings(database_url=f"postgresql://postgres@127.0.0.1:{port}/forge")
+            for _ in range(90):
+                try:
+                    assert command("exec", name, "cat", "/proc/1/comm") == "postgres"
+                    command("exec", name, "pg_isready", "-h", "127.0.0.1", "-U", "postgres", "-d", "forge")
+                    async with await AsyncConnection.connect(settings.database_url, connect_timeout=3) as conn:
+                        await conn.execute("SELECT 1")
+                    break
+                except (AssertionError, subprocess.CalledProcessError, OperationalError):
+                    await asyncio.sleep(0.5)
+            else:
+                pytest.fail("isolated PostgreSQL readiness deadline")
+            db = Database(settings)
+            await db.open()
+            yield db, settings
+        finally:
+            if db:
+                await db.close()
+            result = subprocess.run([docker, "rm", "-f", "-v", name], capture_output=True, timeout=60)
+            if result.returncode != 0:
+                absent = subprocess.run(
+                    [docker, "inspect", name, "--format", "{{.Id}}"], capture_output=True, timeout=30
+                )
+>               assert absent.returncode != 0 and b"No such" in absent.stderr, (
+                    "owned PostgreSQL cleanup unverified"
+                )
+E               AssertionError: owned PostgreSQL cleanup unverified
+E               assert (0 != 0)
+E                +  where 0 = CompletedProcess(args=['/opt/homebrew/bin/docker', 'inspect', 'forge-store-test-f05a7eac6d91', '--format', '{{.Id}}'], returncode=0, stdout=b'8114565eeb709a95ff9fbcf6bb9b9bb154c683d85fb9964281e1bfa20a6bd4dc\n', stderr=b'').returncode
+
+tests/test_run_store.py:77: AssertionError
+_______ ERROR at setup of test_platform_rejects_future_database_version ________
+
+    @pytest_asyncio.fixture(scope="module", loop_scope="module")
+    async def database():
+        docker = shutil.which("docker")
+        if not docker:
+            pytest.fail("Docker is required for real PostgreSQL store tests")
+        name = "forge-store-test-" + uuid4().hex[:12]
+    
+        def command(*args, check=True):
+            result = subprocess.run([docker, *args], capture_output=True, timeout=60, check=check)
+            return result.stdout.decode().strip()
+    
+        db = None
+        try:
+            command(
+                "run",
+                "--pull=never",
+                "-d",
+                "--name",
+                name,
+                "--cpus=.5",
+                "--memory=256m",
+                "--memory-swap=256m",
+                "--pids-limit=64",
+                "-p",
+                "127.0.0.1::5432",
+                "-e",
+                "POSTGRES_HOST_AUTH_METHOD=trust",
+                "-e",
+                "POSTGRES_DB=forge",
+                PG,
+            )
+            port = command("port", name, "5432/tcp").rsplit(":", 1)[1]
+            settings = Settings(database_url=f"postgresql://postgres@127.0.0.1:{port}/forge")
+            for _ in range(90):
+                try:
+>                   assert command("exec", name, "cat", "/proc/1/comm") == "postgres"
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_run_store.py:57: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+tests/test_run_store.py:30: in command
+    result = subprocess.run([docker, *args], capture_output=True, timeout=60, check=check)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/Users/will/.local/share/uv/python/cpython-3.12-macos-aarch64-none/lib/python3.12/subprocess.py:552: in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/Users/will/.local/share/uv/python/cpython-3.12-macos-aarch64-none/lib/python3.12/subprocess.py:1211: in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/Users/will/.local/share/uv/python/cpython-3.12-macos-aarch64-none/lib/python3.12/subprocess.py:2124: in _communicate
+    self._check_timeout(endtime, orig_timeout, stdout, stderr)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <Popen: returncode: -9 args: ['/opt/homebrew/bin/docker', 'exec', 'forge-sto...>
+endtime = 718411.949557, orig_timeout = 60, stdout_seq = [], stderr_seq = []
+skip_check_and_raise = False
+
+    def _check_timeout(self, endtime, orig_timeout, stdout_seq, stderr_seq,
+                       skip_check_and_raise=False):
+        """Convenience for checking if a timeout has expired."""
+        if endtime is None:
+            return
+        if skip_check_and_raise or _time() > endtime:
+>           raise TimeoutExpired(
+                    self.args, orig_timeout,
+                    output=b''.join(stdout_seq) if stdout_seq else None,
+                    stderr=b''.join(stderr_seq) if stderr_seq else None)
+E           subprocess.TimeoutExpired: Command '['/opt/homebrew/bin/docker', 'exec', 'forge-store-test-f05a7eac6d91', 'cat', '/proc/1/comm']' timed out after 60 seconds
+
+/Users/will/.local/share/uv/python/cpython-3.12-macos-aarch64-none/lib/python3.12/subprocess.py:1255: TimeoutExpired
+
+During handling of the above exception, another exception occurred:
+
+    @pytest_asyncio.fixture(scope="module", loop_scope="module")
+    async def database():
+        docker = shutil.which("docker")
+        if not docker:
+            pytest.fail("Docker is required for real PostgreSQL store tests")
+        name = "forge-store-test-" + uuid4().hex[:12]
+    
+        def command(*args, check=True):
+            result = subprocess.run([docker, *args], capture_output=True, timeout=60, check=check)
+            return result.stdout.decode().strip()
+    
+        db = None
+        try:
+            command(
+                "run",
+                "--pull=never",
+                "-d",
+                "--name",
+                name,
+                "--cpus=.5",
+                "--memory=256m",
+                "--memory-swap=256m",
+                "--pids-limit=64",
+                "-p",
+                "127.0.0.1::5432",
+                "-e",
+                "POSTGRES_HOST_AUTH_METHOD=trust",
+                "-e",
+                "POSTGRES_DB=forge",
+                PG,
+            )
+            port = command("port", name, "5432/tcp").rsplit(":", 1)[1]
+            settings = Settings(database_url=f"postgresql://postgres@127.0.0.1:{port}/forge")
+            for _ in range(90):
+                try:
+                    assert command("exec", name, "cat", "/proc/1/comm") == "postgres"
+                    command("exec", name, "pg_isready", "-h", "127.0.0.1", "-U", "postgres", "-d", "forge")
+                    async with await AsyncConnection.connect(settings.database_url, connect_timeout=3) as conn:
+                        await conn.execute("SELECT 1")
+                    break
+                except (AssertionError, subprocess.CalledProcessError, OperationalError):
+                    await asyncio.sleep(0.5)
+            else:
+                pytest.fail("isolated PostgreSQL readiness deadline")
+            db = Database(settings)
+            await db.open()
+            yield db, settings
+        finally:
+            if db:
+                await db.close()
+            result = subprocess.run([docker, "rm", "-f", "-v", name], capture_output=True, timeout=60)
+            if result.returncode != 0:
+                absent = subprocess.run(
+                    [docker, "inspect", name, "--format", "{{.Id}}"], capture_output=True, timeout=30
+                )
+>               assert absent.returncode != 0 and b"No such" in absent.stderr, (
+                    "owned PostgreSQL cleanup unverified"
+                )
+E               AssertionError: owned PostgreSQL cleanup unverified
+E               assert (0 != 0)
+E                +  where 0 = CompletedProcess(args=['/opt/homebrew/bin/docker', 'inspect', 'forge-store-test-f05a7eac6d91', '--format', '{{.Id}}'], returncode=0, stdout=b'8114565eeb709a95ff9fbcf6bb9b9bb154c683d85fb9964281e1bfa20a6bd4dc\n', stderr=b'').returncode
+
+tests/test_run_store.py:77: AssertionError
+=========================== short test summary info ============================
+ERROR tests/test_run_store.py::test_platform_migrations_reopen_without_reapplying
+ERROR tests/test_run_store.py::test_platform_rejects_future_database_version
+10 deselected, 2 errors in 737.68s (0:12:17)

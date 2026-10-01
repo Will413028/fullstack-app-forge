@@ -1,0 +1,14 @@
+.......F..
+======================================================================
+FAIL: test_unknown_daemon_mutation_even_with_clean_flags (test_verify_loop_quota.LoopQuotaGateTests.test_unknown_daemon_mutation_even_with_clean_flags)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/will/second-brain/.projects/personal/fullstack-app-forge/docs/plans/2026-10-01-full-rebuild/test_verify_loop_quota.py", line 76, in test_unknown_daemon_mutation_even_with_clean_flags
+    with self.assertRaisesRegex(ValueError, "cleanup"):
+         ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.003s
+
+FAILED (failures=1)

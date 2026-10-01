@@ -1,0 +1,629 @@
+{
+  "checks": [
+    {
+      "name": "db-filesystem",
+      "passed": true,
+      "evidence": {
+        "capacity_bytes": 241081344,
+        "fstype": "ext4",
+        "source": "/dev/loop0",
+        "device_number": "7:0",
+        "configured_bytes": 268435456,
+        "uuid": "69ca3128-d658-46aa-8396-b117ef79c4b4"
+      }
+    },
+    {
+      "name": "artifact-filesystem",
+      "passed": true,
+      "evidence": {
+        "capacity_bytes": 241081344,
+        "fstype": "ext4",
+        "source": "/dev/loop1",
+        "device_number": "7:1",
+        "configured_bytes": 268435456,
+        "uuid": "d25b30ca-fc4d-4ff4-a103-2d958c7a96d3"
+      }
+    },
+    {
+      "name": "db-enospc",
+      "passed": true,
+      "evidence": {
+        "errno": 28,
+        "written": 196259840,
+        "elapsed_seconds": 21.263075218000267
+      }
+    },
+    {
+      "name": "scope-isolation",
+      "passed": true,
+      "evidence": {
+        "independent_write": true
+      }
+    },
+    {
+      "name": "postgres-restart",
+      "passed": true,
+      "evidence": {
+        "marker": "42"
+      }
+    }
+  ],
+  "error": "AssertionError: owned writer/reader failed",
+  "cleanup": {
+    "containers": true,
+    "volumes": true,
+    "loop_devices": true,
+    "backing_volume": true,
+    "errors": []
+  },
+  "prefix": "forge-loop-8c843883a642",
+  "backing_volume": "forge-loop-8c843883a642-images",
+  "controller": "forge-loop-8c843883a642-controller",
+  "remaining_loops": {},
+  "pending_attach": [],
+  "timings": [
+    {
+      "operation": "image",
+      "seconds": 0.228,
+      "exit_code": 0
+    },
+    {
+      "operation": "volume",
+      "seconds": 0.137,
+      "exit_code": 0
+    },
+    {
+      "operation": "run",
+      "seconds": 6.536,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 1.254,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 12.226,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 0.239,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 0.904,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 1.557,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 0.302,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 0.284,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 0.181,
+      "exit_code": 0
+    },
+    {
+      "operation": "volume",
+      "seconds": 0.101,
+      "exit_code": 0
+    },
+    {
+      "operation": "volume",
+      "seconds": 0.202,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 0.234,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 0.426,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 0.763,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 0.398,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 0.199,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 0.2,
+      "exit_code": 0
+    },
+    {
+      "operation": "volume",
+      "seconds": 0.104,
+      "exit_code": 0
+    },
+    {
+      "operation": "volume",
+      "seconds": 0.088,
+      "exit_code": 0
+    },
+    {
+      "operation": "run",
+      "seconds": 3.904,
+      "exit_code": 0
+    },
+    {
+      "operation": "wait",
+      "seconds": 9.057,
+      "exit_code": 0
+    },
+    {
+      "operation": "logs",
+      "seconds": 0.74,
+      "exit_code": 0
+    },
+    {
+      "operation": "rm",
+      "seconds": 0.292,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 2.89,
+      "exit_code": 0
+    },
+    {
+      "operation": "run",
+      "seconds": 4.17,
+      "exit_code": 0
+    },
+    {
+      "operation": "wait",
+      "seconds": 4.459,
+      "exit_code": 0
+    },
+    {
+      "operation": "logs",
+      "seconds": 0.535,
+      "exit_code": 0
+    },
+    {
+      "operation": "rm",
+      "seconds": 0.505,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 0.961,
+      "exit_code": 0
+    },
+    {
+      "operation": "run",
+      "seconds": 13.937,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 8.434,
+      "exit_code": 1
+    },
+    {
+      "operation": "exec",
+      "seconds": 3.736,
+      "exit_code": 1
+    },
+    {
+      "operation": "exec",
+      "seconds": 3.904,
+      "exit_code": 1
+    },
+    {
+      "operation": "exec",
+      "seconds": 7.1,
+      "exit_code": 1
+    },
+    {
+      "operation": "exec",
+      "seconds": 8.313,
+      "exit_code": 1
+    },
+    {
+      "operation": "exec",
+      "seconds": 8.947,
+      "exit_code": 1
+    },
+    {
+      "operation": "exec",
+      "seconds": 4.545,
+      "exit_code": 1
+    },
+    {
+      "operation": "exec",
+      "seconds": 9.84,
+      "exit_code": 1
+    },
+    {
+      "operation": "exec",
+      "seconds": 4.878,
+      "exit_code": 1
+    },
+    {
+      "operation": "exec",
+      "seconds": 4.503,
+      "exit_code": 1
+    },
+    {
+      "operation": "exec",
+      "seconds": 5.386,
+      "exit_code": 1
+    },
+    {
+      "operation": "exec",
+      "seconds": 5.007,
+      "exit_code": 1
+    },
+    {
+      "operation": "exec",
+      "seconds": 5.964,
+      "exit_code": 1
+    },
+    {
+      "operation": "exec",
+      "seconds": 3.456,
+      "exit_code": 1
+    },
+    {
+      "operation": "exec",
+      "seconds": 2.335,
+      "exit_code": 1
+    },
+    {
+      "operation": "exec",
+      "seconds": 2.07,
+      "exit_code": 1
+    },
+    {
+      "operation": "exec",
+      "seconds": 5.886,
+      "exit_code": 1
+    },
+    {
+      "operation": "exec",
+      "seconds": 1.664,
+      "exit_code": 1
+    },
+    {
+      "operation": "exec",
+      "seconds": 3.4,
+      "exit_code": 1
+    },
+    {
+      "operation": "exec",
+      "seconds": 2.639,
+      "exit_code": 1
+    },
+    {
+      "operation": "exec",
+      "seconds": 10.934,
+      "exit_code": 1
+    },
+    {
+      "operation": "exec",
+      "seconds": 3.833,
+      "exit_code": 1
+    },
+    {
+      "operation": "exec",
+      "seconds": 5.449,
+      "exit_code": 1
+    },
+    {
+      "operation": "exec",
+      "seconds": 4.251,
+      "exit_code": 1
+    },
+    {
+      "operation": "exec",
+      "seconds": 7.512,
+      "exit_code": 1
+    },
+    {
+      "operation": "exec",
+      "seconds": 2.598,
+      "exit_code": 1
+    },
+    {
+      "operation": "exec",
+      "seconds": 2.966,
+      "exit_code": 1
+    },
+    {
+      "operation": "exec",
+      "seconds": 1.418,
+      "exit_code": 1
+    },
+    {
+      "operation": "exec",
+      "seconds": 1.654,
+      "exit_code": 1
+    },
+    {
+      "operation": "exec",
+      "seconds": 1.533,
+      "exit_code": 1
+    },
+    {
+      "operation": "exec",
+      "seconds": 1.403,
+      "exit_code": 1
+    },
+    {
+      "operation": "exec",
+      "seconds": 3.535,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 3.845,
+      "exit_code": 0
+    },
+    {
+      "operation": "stop",
+      "seconds": 17.159,
+      "exit_code": 0
+    },
+    {
+      "operation": "rm",
+      "seconds": 0.634,
+      "exit_code": 0
+    },
+    {
+      "operation": "run",
+      "seconds": 10.009,
+      "exit_code": 0
+    },
+    {
+      "operation": "wait",
+      "seconds": 32.024,
+      "exit_code": 0
+    },
+    {
+      "operation": "logs",
+      "seconds": 0.605,
+      "exit_code": 0
+    },
+    {
+      "operation": "rm",
+      "seconds": 0.544,
+      "exit_code": 0
+    },
+    {
+      "operation": "run",
+      "seconds": 5.28,
+      "exit_code": 0
+    },
+    {
+      "operation": "wait",
+      "seconds": 3.138,
+      "exit_code": 0
+    },
+    {
+      "operation": "logs",
+      "seconds": 0.532,
+      "exit_code": 0
+    },
+    {
+      "operation": "rm",
+      "seconds": 0.918,
+      "exit_code": 0
+    },
+    {
+      "operation": "run",
+      "seconds": 5.6,
+      "exit_code": 0
+    },
+    {
+      "operation": "wait",
+      "seconds": 3.204,
+      "exit_code": 0
+    },
+    {
+      "operation": "logs",
+      "seconds": 0.519,
+      "exit_code": 0
+    },
+    {
+      "operation": "rm",
+      "seconds": 0.392,
+      "exit_code": 0
+    },
+    {
+      "operation": "run",
+      "seconds": 3.347,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 1.583,
+      "exit_code": 2
+    },
+    {
+      "operation": "exec",
+      "seconds": 1.03,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 1.13,
+      "exit_code": 0
+    },
+    {
+      "operation": "stop",
+      "seconds": 1.227,
+      "exit_code": 0
+    },
+    {
+      "operation": "rm",
+      "seconds": 0.569,
+      "exit_code": 0
+    },
+    {
+      "operation": "run",
+      "seconds": 4.076,
+      "exit_code": 0
+    },
+    {
+      "operation": "wait",
+      "seconds": 25.486,
+      "exit_code": 0
+    },
+    {
+      "operation": "logs",
+      "seconds": 0.382,
+      "exit_code": 0
+    },
+    {
+      "operation": "rm",
+      "seconds": 0.185,
+      "exit_code": 0
+    },
+    {
+      "operation": "rm",
+      "seconds": 0.315,
+      "exit_code": 0
+    },
+    {
+      "operation": "rm",
+      "seconds": 0.261,
+      "exit_code": 0
+    },
+    {
+      "operation": "rm",
+      "seconds": 0.336,
+      "exit_code": 0
+    },
+    {
+      "operation": "rm",
+      "seconds": 0.366,
+      "exit_code": 0
+    },
+    {
+      "operation": "rm",
+      "seconds": 0.198,
+      "exit_code": 0
+    },
+    {
+      "operation": "rm",
+      "seconds": 0.216,
+      "exit_code": 0
+    },
+    {
+      "operation": "rm",
+      "seconds": 0.168,
+      "exit_code": 0
+    },
+    {
+      "operation": "volume",
+      "seconds": 0.207,
+      "exit_code": 0
+    },
+    {
+      "operation": "volume",
+      "seconds": 0.333,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 1.444,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 1.419,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 0.695,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 0.379,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 0.759,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 1.15,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 0.751,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 1.024,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 0.778,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 1.372,
+      "exit_code": 0
+    },
+    {
+      "operation": "rm",
+      "seconds": 4.947,
+      "exit_code": 0
+    },
+    {
+      "operation": "volume",
+      "seconds": 1.43,
+      "exit_code": 0
+    }
+  ],
+  "diagnostics": [
+    {
+      "container": "forge-loop-8c843883a642-db-fill",
+      "progress": "{\"written\": 16777216, \"elapsed_seconds\": 1.2226351669996802, \"memory_events\": \"low 0\\nhigh 0\\nmax 0\\noom 0\\noom_kill 0\\noom_group_kill 0\\n\"}\n{\"written\": 33554432, \"elapsed_seconds\": 3.789236085000084, \"memory_events\": \"low 0\\nhigh 0\\nmax 0\\noom 0\\noom_kill 0\\noom_group_kill 0\\n\"}\n{\"written\": 50331648, \"elapsed_seconds\": 4.87297912699978, \"memory_events\": \"low 0\\nhigh 0\\nmax 0\\noom 0\\noom_kill 0\\noom_group_kill 0\\n\"}\n{\"written\": 67108864, \"elapsed_seconds\": 7.44188733700048, \"memory_events\": \"low 0\\nhigh 0\\nmax 22\\noom 0\\noom_kill 0\\noom_group_kill 0\\n\"}\n{\"written\": 83886080, \"elapsed_seconds\": 11.09682321299988, \"memory_events\": \"low 0\\nhigh 0\\nmax 177\\noom 0\\noom_kill 0\\noom_group_kill 0\\n\"}\n{\"written\": 100663296, \"elapsed_seconds\": 11.773017172000436, \"memory_events\": \"low 0\\nhigh 0\\nmax 246\\noom 0\\noom_kill 0\\noom_group_kill 0\\n\"}\n{\"written\": 117440512, \"elapsed_seconds\": 16.608224923999842, \"memory_events\": \"low 0\\nhigh 0\\nmax 405\\noom 0\\noom_kill 0\\noom_group_kill 0\\n\"}\n{\"written\": 134217728, \"elapsed_seconds\": 17.79798509200009, \"memory_events\": \"low 0\\nhigh 0\\nmax 472\\noom 0\\noom_kill 0\\noom_group_kill 0\\n\"}\n{\"written\": 150994944, \"elapsed_seconds\": 20.196778759000154, \"memory_events\": \"low 0\\nhigh 0\\nmax 712\\noom 0\\noom_kill 0\\noom_group_kill 0\\n\"}\n{\"written\": 167772160, \"elapsed_seconds\": 20.448080551000203, \"memory_events\": \"low 0\\nhigh 0\\nmax 842\\noom 0\\noom_kill 0\\noom_group_kill 0\\n\"}\n{\"written\": 184549376, \"elapsed_seconds\": 20.692817426000147, \"memory_events\": \"low 0\\nhigh 0\\nmax 962\\noom 0\\noom_kill 0\\noom_group_kill 0\\n\"}\n"
+    },
+    {
+      "container": "forge-loop-8c843883a642-artifact-fill",
+      "progress": "{\"written\": 16777216, \"elapsed_seconds\": 0.8937600430008388, \"memory_events\": \"low 0\\nhigh 0\\nmax 0\\noom 0\\noom_kill 0\\noom_group_kill 0\\n\"}\n{\"written\": 33554432, \"elapsed_seconds\": 1.7769193760004782, \"memory_events\": \"low 0\\nhigh 0\\nmax 0\\noom 0\\noom_kill 0\\noom_group_kill 0\\n\"}\n{\"written\": 50331648, \"elapsed_seconds\": 6.403273712000555, \"memory_events\": \"low 0\\nhigh 0\\nmax 0\\noom 0\\noom_kill 0\\noom_group_kill 0\\n\"}\n{\"written\": 67108864, \"elapsed_seconds\": 7.280835462000141, \"memory_events\": \"low 0\\nhigh 0\\nmax 0\\noom 0\\noom_kill 0\\noom_group_kill 0\\n\"}\n{\"written\": 83886080, \"elapsed_seconds\": 7.534071796000717, \"memory_events\": \"low 0\\nhigh 0\\nmax 45\\noom 0\\noom_kill 0\\noom_group_kill 0\\n\"}\n{\"written\": 100663296, \"elapsed_seconds\": 12.417491715000324, \"memory_events\": \"low 0\\nhigh 0\\nmax 275\\noom 0\\noom_kill 0\\noom_group_kill 0\\n\"}\n{\"written\": 117440512, \"elapsed_seconds\": 12.77886000700073, \"memory_events\": \"low 0\\nhigh 0\\nmax 342\\noom 0\\noom_kill 0\\noom_group_kill 0\\n\"}\n{\"written\": 134217728, \"elapsed_seconds\": 12.928077048000887, \"memory_events\": \"low 0\\nhigh 0\\nmax 406\\noom 0\\noom_kill 0\\noom_group_kill 0\\n\"}\n{\"written\": 150994944, \"elapsed_seconds\": 13.203110298000865, \"memory_events\": \"low 0\\nhigh 0\\nmax 470\\noom 0\\noom_kill 0\\noom_group_kill 0\\n\"}\n{\"written\": 167772160, \"elapsed_seconds\": 13.682320090000758, \"memory_events\": \"low 0\\nhigh 0\\nmax 619\\noom 0\\noom_kill 0\\noom_group_kill 0\\n\"}\n{\"written\": 184549376, \"elapsed_seconds\": 13.837387049000426, \"memory_events\": \"low 0\\nhigh 0\\nmax 863\\noom 0\\noom_kill 0\\noom_group_kill 0\\n\"}\n"
+    }
+  ],
+  "scope": "local volume lifecycle and controller remap; not Docker daemon/host reboot",
+  "tools_image_id": "sha256:35175b730c0fb88c24d2dcbd5869cee7d8cb8913638f2ec1fdb338e10dd117dd",
+  "tools_versions": "e2fsprogs: Standard Ext2/3/4 filesystem utilities\ne2fsprogs: https://e2fsprogs.sourceforge.net/\ne2fsprogs: 471 KiB\nutil-linux: Random collection of Linux utilities\nutil-linux: https://git.kernel.org/cgit/utils/util-linux/util-linux.git\nutil-linux: 1 B"
+}

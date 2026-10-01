@@ -1,0 +1,5 @@
+FROM postgres@sha256:b0f9560a2de083e2cc7382e75f808c7381a32852a7ec49117deedb300e552b24
+RUN awk 'NF && $0 !~ /^https:\/\/dl-cdn\.alpinelinux\.org\/alpine\/v3\.24\/(main|community)$/ {exit 1}' /etc/apk/repositories \
+    && apk add --no-cache e2fsprogs util-linux
+ENTRYPOINT []
+CMD ["sleep", "infinity"]

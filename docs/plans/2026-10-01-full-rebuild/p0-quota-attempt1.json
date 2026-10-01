@@ -1,0 +1,20 @@
+{
+  "checks": [
+    {
+      "name": "fixed-filesystem-mounted",
+      "passed": true,
+      "evidence": "256MiB case-sensitive journaled HFS+ image"
+    }
+  ],
+  "cleanup": {
+    "containers": true,
+    "detached": false,
+    "temporary_files": false,
+    "errors": [
+      "/usr/bin/hdiutil failed with code 16: hdiutil: couldn't unmount \"disk6\" - Resource busy"
+    ]
+  },
+  "error": "Command '['/opt/homebrew/bin/docker', 'wait', 'forge-quota-2c201dbf94eb-fill']' timed out after 60 seconds",
+  "postgres_image": "sha256:25a89970a83255ae96484d709005bb35aa71f7455f941bc1634514f31c5d5c62",
+  "python_image": "sha256:75496575cd8e3aeb3fe561f0384f661d490c14770eda935d2302d61ca20a0b2d"
+}

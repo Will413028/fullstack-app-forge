@@ -1,0 +1,9 @@
+24-bookworm-slim: Pulling from library/node
+333125b5cee9: Already exists
+82cd842c80a4: Already exists
+b244c8f190ad: Already exists
+064d54af254c: Already exists
+1adfcc986996: Already exists
+Digest: sha256:0e0ff40c39bc087845bfb27465a0df4ea419520094bc35842ff83dd8cbe6f9b6
+Status: Downloaded newer image for node:24-bookworm-slim
+docker.io/library/node:24-bookworm-slim

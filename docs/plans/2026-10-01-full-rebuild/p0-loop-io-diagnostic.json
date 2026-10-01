@@ -1,0 +1,334 @@
+{
+  "checks": [
+    {
+      "name": "db-filesystem",
+      "passed": true,
+      "evidence": {
+        "capacity_bytes": 241081344,
+        "fstype": "ext4",
+        "source": "/dev/loop0",
+        "device_number": "7:0",
+        "configured_bytes": 268435456,
+        "uuid": "2eb5d364-91d4-45a7-b01e-5257992eade6"
+      }
+    },
+    {
+      "name": "artifact-filesystem",
+      "passed": true,
+      "evidence": {
+        "capacity_bytes": 241081344,
+        "fstype": "ext4",
+        "source": "/dev/loop1",
+        "device_number": "7:1",
+        "configured_bytes": 268435456,
+        "uuid": "5e739684-55ab-4165-af61-a6920fdb80b9"
+      }
+    },
+    {
+      "name": "db-io-diagnostic",
+      "passed": true,
+      "evidence": {
+        "written": 16777216,
+        "write_samples_seconds": [
+          0.16395600000032573,
+          0.1983947500002614,
+          0.21934062499985885,
+          0.3540567500003817,
+          0.3621556660000351,
+          0.4069291659998271,
+          0.5220822080000289,
+          0.8029560000004494,
+          0.8495535000001837,
+          0.9854137920001449,
+          1.0727936249995764,
+          1.3057959170000686,
+          1.4669402919998902,
+          1.5692987499996889,
+          1.6056466250001904,
+          1.7691917089996423
+        ],
+        "fsync_seconds": 1.7137608759994691,
+        "total_seconds": 3.5413349179998477
+      }
+    }
+  ],
+  "error": null,
+  "cleanup": {
+    "containers": true,
+    "volumes": true,
+    "loop_devices": true,
+    "backing_volume": true,
+    "errors": []
+  },
+  "prefix": "forge-loop-ec2d7755a39f",
+  "backing_volume": "forge-loop-ec2d7755a39f-images",
+  "controller": "forge-loop-ec2d7755a39f-controller",
+  "remaining_loops": {},
+  "pending_attach": [],
+  "timings": [
+    {
+      "operation": "image",
+      "seconds": 0.447,
+      "exit_code": 0
+    },
+    {
+      "operation": "volume",
+      "seconds": 0.357,
+      "exit_code": 0
+    },
+    {
+      "operation": "run",
+      "seconds": 6.45,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 2.918,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 11.663,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 4.292,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 3.504,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 1.314,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 1.742,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 2.905,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 1.98,
+      "exit_code": 0
+    },
+    {
+      "operation": "volume",
+      "seconds": 0.281,
+      "exit_code": 0
+    },
+    {
+      "operation": "volume",
+      "seconds": 0.429,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 1.441,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 1.011,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 1.113,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 0.991,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 1.141,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 1.141,
+      "exit_code": 0
+    },
+    {
+      "operation": "volume",
+      "seconds": 0.285,
+      "exit_code": 0
+    },
+    {
+      "operation": "volume",
+      "seconds": 0.082,
+      "exit_code": 0
+    },
+    {
+      "operation": "run",
+      "seconds": 5.602,
+      "exit_code": 0
+    },
+    {
+      "operation": "wait",
+      "seconds": 7.433,
+      "exit_code": 0
+    },
+    {
+      "operation": "logs",
+      "seconds": 0.854,
+      "exit_code": 0
+    },
+    {
+      "operation": "rm",
+      "seconds": 1.249,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 7.065,
+      "exit_code": 0
+    },
+    {
+      "operation": "run",
+      "seconds": 10.519,
+      "exit_code": 0
+    },
+    {
+      "operation": "wait",
+      "seconds": 8.411,
+      "exit_code": 0
+    },
+    {
+      "operation": "logs",
+      "seconds": 0.566,
+      "exit_code": 0
+    },
+    {
+      "operation": "rm",
+      "seconds": 2.397,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 2.786,
+      "exit_code": 0
+    },
+    {
+      "operation": "run",
+      "seconds": 9.077,
+      "exit_code": 0
+    },
+    {
+      "operation": "wait",
+      "seconds": 9.721,
+      "exit_code": 0
+    },
+    {
+      "operation": "logs",
+      "seconds": 0.736,
+      "exit_code": 0
+    },
+    {
+      "operation": "rm",
+      "seconds": 0.736,
+      "exit_code": 0
+    },
+    {
+      "operation": "rm",
+      "seconds": 0.218,
+      "exit_code": 0
+    },
+    {
+      "operation": "rm",
+      "seconds": 0.918,
+      "exit_code": 0
+    },
+    {
+      "operation": "rm",
+      "seconds": 0.714,
+      "exit_code": 0
+    },
+    {
+      "operation": "volume",
+      "seconds": 0.34,
+      "exit_code": 0
+    },
+    {
+      "operation": "volume",
+      "seconds": 0.292,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 2.625,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 2.013,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 1.733,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 1.728,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 2.599,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 2.064,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 1.15,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 1.432,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 0.941,
+      "exit_code": 0
+    },
+    {
+      "operation": "exec",
+      "seconds": 0.893,
+      "exit_code": 0
+    },
+    {
+      "operation": "rm",
+      "seconds": 3.689,
+      "exit_code": 0
+    },
+    {
+      "operation": "volume",
+      "seconds": 1.373,
+      "exit_code": 0
+    }
+  ],
+  "diagnostics": [],
+  "scope": "16MiB I/O diagnostic only; not quota acceptance",
+  "tools_image_id": "sha256:35175b730c0fb88c24d2dcbd5869cee7d8cb8913638f2ec1fdb338e10dd117dd",
+  "tools_versions": "e2fsprogs: Standard Ext2/3/4 filesystem utilities\ne2fsprogs: https://e2fsprogs.sourceforge.net/\ne2fsprogs: 471 KiB\nutil-linux: Random collection of Linux utilities\nutil-linux: https://git.kernel.org/cgit/utils/util-linux/util-linux.git\nutil-linux: 1 B"
+}

@@ -1,0 +1,94 @@
+/Users/will/second-brain/.projects/personal/fullstack-app-forge/backend/.venv/bin/python -m pytest -q "/Users/will/second-brain/.projects/personal/fullstack-app-forge/backend/tests/test_browser.py"
+E                                                                        [100%]
+==================================== ERRORS ====================================
+______________ ERROR at setup of test_browser_platform_round_trip ______________
+
+self = <Coroutine test_browser_platform_round_trip>
+
+    def setup(self) -> None:
+        runner_fixture_id = f"_{self._loop_scope}_scoped_runner"
+        if runner_fixture_id not in self.fixturenames:
+            self.fixturenames.append(runner_fixture_id)
+        # When loop factories are configured, resolve the loop factory
+        # fixture early so that a factory variant change cascades cache
+        # invalidation before any async fixture checks its cache.
+        hook_caller = self.config.hook.pytest_asyncio_loop_factories
+        if hook_caller.get_hookimpls():
+            _ = self._request.getfixturevalue(_asyncio_loop_factory.__name__)
+>       return super().setup()
+               ^^^^^^^^^^^^^^^
+
+backend/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:558: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+backend/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:944: in pytest_fixture_setup
+    hook_result = yield
+                  ^^^^^
+backend/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:407: in _asyncgen_fixture_wrapper
+    result = runner.run(setup(), context=context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/Users/will/.local/share/uv/python/cpython-3.12-macos-aarch64-none/lib/python3.12/asyncio/runners.py:118: in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+/Users/will/.local/share/uv/python/cpython-3.12-macos-aarch64-none/lib/python3.12/asyncio/base_events.py:691: in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+backend/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:403: in setup
+    res = await gen_obj.__anext__()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    @pytest_asyncio.fixture(scope="module", loop_scope="module")
+    async def database():
+        docker = shutil.which("docker")
+        if not docker:
+            pytest.fail("Docker is required for real PostgreSQL store tests")
+        name = "forge-store-test-" + uuid4().hex[:12]
+    
+        def command(*args, check=True):
+            result = subprocess.run([docker, *args], capture_output=True, timeout=60, check=check)
+            return result.stdout.decode().strip()
+    
+        db = None
+        try:
+            command(
+                "run",
+                "--pull=never",
+                "-d",
+                "--name",
+                name,
+                "--cpus=.5",
+                "--memory=256m",
+                "--memory-swap=256m",
+                "--pids-limit=64",
+                "-p",
+                "127.0.0.1::5432",
+                "-e",
+                "POSTGRES_HOST_AUTH_METHOD=trust",
+                "-e",
+                "POSTGRES_DB=forge",
+                PG,
+            )
+            port = command("port", name, "5432/tcp").rsplit(":", 1)[1]
+            settings = Settings(database_url=f"postgresql://postgres@127.0.0.1:{port}/forge")
+            deadline = asyncio.get_running_loop().time() + 120
+            while asyncio.get_running_loop().time() < deadline:
+                try:
+                    # Probe the same host TCP route as the API pool. initdb's temporary
+                    # Unix-socket server cannot satisfy this connection.
+                    async with asyncio.timeout(5):
+                        async with await AsyncConnection.connect(
+                            settings.database_url, connect_timeout=3
+                        ) as conn:
+                            await conn.execute("SELECT 1")
+                    break
+                except (OperationalError, TimeoutError):
+                    await asyncio.sleep(0.5)
+            else:
+>               pytest.fail("isolated PostgreSQL readiness deadline")
+E               Failed: isolated PostgreSQL readiness deadline
+
+backend/tests/test_run_store.py:69: Failed
+=========================== short test summary info ============================
+ERROR backend/tests/test_browser.py::test_browser_platform_round_trip - Faile...
+1 error in 172.77s (0:02:52)
+make: *** [check-browser] Error 1

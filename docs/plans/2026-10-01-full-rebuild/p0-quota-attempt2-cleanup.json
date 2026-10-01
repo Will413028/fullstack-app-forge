@@ -1,0 +1,10 @@
+{
+  "forced_detach_of_owned_test_image": true,
+  "containers_reference_mount": false,
+  "cleanup": {
+    "containers": true,
+    "detached": true,
+    "temporary_files": true,
+    "errors": []
+  }
+}

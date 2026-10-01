@@ -1,0 +1,73 @@
+/Users/will/second-brain/.projects/personal/fullstack-app-forge/backend/.venv/bin/python -m pytest -q "/Users/will/second-brain/.projects/personal/fullstack-app-forge/backend/tests/test_browser.py"
+F                                                                        [100%]
+=================================== FAILURES ===================================
+_______________________ test_browser_platform_round_trip _______________________
+
+database = (<forge.db.Database object at 0x10d6f6000>, Settings(platform_origin='http://localhost:3000', secure_cookies=False, se...00, lease_seconds=30, max_attempts=2, max_active_runs=1, model_base_url=None, model_name=None, max_model_tokens=16000))
+
+    async def test_browser_platform_round_trip(database):
+        _, settings = database
+        node = shutil.which("node")
+        assert node, "Node.js required for real browser test"
+        assert (ROOT / "web/.next/standalone/web/server.js").is_file(), "Build web before browser test"
+        api_port, web_port = free_port(), free_port()
+        origin = f"http://127.0.0.1:{web_port}"
+        api_url = f"http://127.0.0.1:{api_port}"
+        env = {**os.environ, "FORGE_DATABASE_URL": settings.database_url, "FORGE_PLATFORM_ORIGIN": origin}
+        processes = []
+        browser = None
+        try:
+            api = subprocess.Popen(
+                [
+                    str(ROOT / "backend/.venv/bin/uvicorn"),
+                    "forge.main:app",
+                    "--host",
+                    "127.0.0.1",
+                    "--port",
+                    str(api_port),
+                ],
+                cwd=ROOT / "backend",
+                env=env,
+                stdout=subprocess.DEVNULL,
+                stderr=subprocess.DEVNULL,
+                start_new_session=True,
+            )
+            processes.append(api)
+            await wait_ready(api_url + "/openapi.json", 200, api)
+            web = subprocess.Popen(
+                [node, str(ROOT / "web/start.mjs"), "--port", str(web_port)],
+                cwd=ROOT,
+                env={**env, "FORGE_API_URL": api_url},
+                stdout=subprocess.DEVNULL,
+                stderr=subprocess.DEVNULL,
+                start_new_session=True,
+            )
+            processes.append(web)
+            await wait_ready(origin + "/v1/auth/session", 401, web)
+            browser = await asyncio.create_subprocess_exec(
+                node,
+                str(ROOT / "docs/plans/2026-10-01-full-rebuild/p1a_browser_flow.mjs"),
+                cwd=ROOT,
+                env={**env, "FORGE_TEST_ORIGIN": origin},
+                stdout=asyncio.subprocess.PIPE,
+                stderr=asyncio.subprocess.PIPE,
+            )
+            stdout, stderr = await asyncio.wait_for(browser.communicate(), timeout=300)
+>           assert browser.returncode == 0, stderr.decode(errors="replace")[-4000:]
+E           AssertionError: file:///Users/will/second-brain/.projects/personal/fullstack-app-forge/docs/plans/2026-10-01-full-rebuild/p1a_browser_flow.mjs:12
+E             expect.setTimeout(60000);
+E                    ^
+E             
+E             TypeError: expect.setTimeout is not a function
+E                 at file:///Users/will/second-brain/.projects/personal/fullstack-app-forge/docs/plans/2026-10-01-full-rebuild/p1a_browser_flow.mjs:12:8
+E             
+E             Node.js v26.10.0
+E             
+E           assert 1 == 0
+E            +  where 1 = <Process 15257>.returncode
+
+backend/tests/test_browser.py:86: AssertionError
+=========================== short test summary info ============================
+FAILED backend/tests/test_browser.py::test_browser_platform_round_trip - Asse...
+1 failed in 194.40s (0:03:14)
+make: *** [check-browser] Error 1

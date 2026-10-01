@@ -1,0 +1,5 @@
+{"written": 16777216, "elapsed_seconds": 3.7708382099999653, "memory_events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\n"}
+{"written": 33554432, "elapsed_seconds": 8.920361878999756, "memory_events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\n"}
+{"written": 50331648, "elapsed_seconds": 11.309623921999446, "memory_events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\n"}
+{"written": 67108864, "elapsed_seconds": 17.331902424999498, "memory_events": "low 0\nhigh 0\nmax 57\noom 0\noom_kill 0\noom_group_kill 0\n"}
+{"written": 83886080, "elapsed_seconds": 18.01425959199969, "memory_events": "low 0\nhigh 0\nmax 123\noom 0\noom_kill 0\noom_group_kill 0\n"}

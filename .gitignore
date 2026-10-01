@@ -1,0 +1,15 @@
+docs/plans/2026-10-01-full-rebuild/reference/
+__pycache__/
+*.pyc
+.venv/
+node_modules/
+.next/
+.forge/
+.env
+.env.*
+!.env.example
+.pytest_cache/
+.ruff_cache/
+*.tsbuildinfo
+docs/plans/2026-10-01-full-rebuild/linux-quota-*/
+docs/plans/2026-10-01-full-rebuild/quota-probe-*/

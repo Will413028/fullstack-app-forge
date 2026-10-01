@@ -1,0 +1,36 @@
+name: check
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: check-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  platform:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v6
+      - uses: pnpm/setup@v1
+        with:
+          version: 11.2.0
+          runtime: node@24
+          install: false
+      - uses: astral-sh/setup-uv@bec219d24cd3e171d82865faccec33120bb574f4 # v10.1.0
+        with:
+          python-version: '3.12'
+      - name: Install locked dependencies
+        run: make install
+      - name: Prepare isolated test image
+        run: make prepare-db
+      - name: Install browser runtime
+        run: pnpm exec playwright install --with-deps chromium
+      - name: Check platform
+        run: make check
